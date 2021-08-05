@@ -9,7 +9,7 @@ const addressSchema = new Schema({
     city: String,
     state: String,
     zip_code: Number,
-})
+}, {timeStamps: true})
 
 const activitySchema = new Schema({
   name: String,
@@ -22,6 +22,6 @@ const activitySchema = new Schema({
   attendees: [{type: Schema.Types.ObjectId, 'ref': "Profile"}],
   owner: {type: Schema.Types.ObjectId, 'ref': "Profile"},
   isKeyActivity: Boolean
-})
+}, {timeStamps: true})
 
 const Activity = mongoose.model('Activity', activitySchema)
