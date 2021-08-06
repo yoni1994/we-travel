@@ -6,7 +6,7 @@ const router = Router()
 
 
 // Public Routes
-
+router.post('/', tripsCtrl.create)
 
 // Protected Routes
 router.use(decodeUserFromToken)
