@@ -9,7 +9,7 @@ const router = Router()
 
 // Protected Routes
 router.use(decodeUserFromToken)
-router.post('/', tripsCtrl.create)
+router.post('/', checkAuth, tripsCtrl.create)
 
 export {
     router
