@@ -1,5 +1,5 @@
 import { Router } from 'express'
-
+import tripsCtrl from '../controllers/trips.js'
 import { decodeUserFromToken, checkAuth } from '../middleware/auth'
 
 const router = Router()
