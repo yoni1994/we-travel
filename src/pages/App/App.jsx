@@ -6,6 +6,7 @@ import Login from '../Login/Login'
 import Landing from '../Landing/Landing'
 import Users from '../Users/Users'
 import * as authService from '../../services/authService'
+import Home from '../Home/Home'
 
 const App = () => {
 	const history = useHistory()
@@ -41,6 +42,9 @@ const App = () => {
 			</Route>
 			<Route exact path='/users'>
 				{user ? <Users /> : <Redirect to='/login' />}
+			</Route>
+			<Route path='/home'>
+				{user ? <Home /> : <Redirect to='/login'/>}
 			</Route>
 		</>
 	)
