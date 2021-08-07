@@ -1,9 +1,11 @@
 import React from 'react';
+import AddTripForm from '../../components/AddTripForm/AddTripForm'
 
 function Home(props) {
   return (
       <div>
-          Hello World! I'm the Home component.
+          <p>Hello World! I'm the Home component.</p> 
+          <AddTripForm/>
       </div>
   )
 }
