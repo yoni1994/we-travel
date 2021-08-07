@@ -1,5 +1,8 @@
 import React, {useState} from 'react';
 
+// Styles
+import styles from './AddTripForm.module.css'
+
 // Services
 import { createTrip } from '../../services/tripService'
 
@@ -27,7 +30,7 @@ function AddTripForm(props) {
   return (
       <div>
         <h2>Add Trip</h2>
-        <form onSubmit={handleSubmit}>
+        <form id="add-trip-form" onSubmit={handleSubmit}>
           <label htmlFor="trip-name">Name</label>
           <input
             id="trip-name" 
