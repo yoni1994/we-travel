@@ -1,5 +1,8 @@
 import React, {useState} from 'react';
 
+// Services
+import { createTrip } from '../../services/tripService'
+
 function AddTripForm(props) {
   const [formData, setFormData] = useState({
     name: '',
@@ -18,8 +21,7 @@ function AddTripForm(props) {
       date: '',
       notes: ''
     })
-    console.log("FORM SUBMISSION: ", formData)
-    // trip service will call the trips api to add to MongoDB
+    createTrip(formData)
   }
 
   return (
