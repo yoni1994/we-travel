@@ -2,9 +2,9 @@ import mongoose from 'mongoose'
 const Schema = mongoose.Schema
 
 const addressSchema = new Schema({
-  city: String,
-  state: String,
-  zip_code: Number,
+  city: {type: String},
+  state: {type: String},
+  zip_code: {type: Number},
 }, {timeStamps: true})
 
 const activitySchema = new Schema({
