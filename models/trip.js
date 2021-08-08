@@ -3,7 +3,7 @@ import mongoose from 'mongoose'
 const Schema = mongoose.Schema
 
 const budgetSchema = Schema({
-  amount: Number
+  amount: {type: Number},
 })
 
 const tripSchema = Schema({
@@ -12,8 +12,8 @@ const tripSchema = Schema({
   attendees:[{type: mongoose.Schema.Types.ObjectId, ref: "Profile"}],
   budget: budgetSchema,
   country: {type: mongoose.Schema.Types.ObjectId, ref: "Country"},
-  date: Date,
-  notes: String,
+  date: {type: Date},
+  notes: {type: String},
   checklist: [{type: mongoose.Schema.Types.ObjectId, ref: "Checklist"}]
 }, {
   timestamps: true,
