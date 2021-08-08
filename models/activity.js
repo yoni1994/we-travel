@@ -8,16 +8,16 @@ const addressSchema = new Schema({
 }, {timeStamps: true})
 
 const activitySchema = new Schema({
-  name: String,
-  location: String,
+  name: {type: String},
+  location: {type: String},
   address: addressSchema,
-  info: String,
-  cost: Number,
+  info: {type: String},
+  cost: {type: Number},
   budgetCategory: {type: String, enum: ['travel', 'lodging', 'food', 'activities', 'misc']},
-  date: Date,
+  date: {type: Date},
   attendees: [{type: Schema.Types.ObjectId, 'ref': "Profile"}],
   owner: {type: Schema.Types.ObjectId, 'ref': "Profile"},
-  isKeyActivity: Boolean
+  isKeyActivity: {type: Boolean},
 }, {timeStamps: true})
 
 const Activity = mongoose.model('Activity', activitySchema)
