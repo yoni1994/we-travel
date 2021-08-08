@@ -5,7 +5,9 @@ const addressSchema = new Schema({
   city: {type: String},
   state: {type: String},
   zip_code: {type: Number},
-}, {timeStamps: true})
+}, {
+  timeStamps: true
+})
 
 const activitySchema = new Schema({
   name: {type: String},
