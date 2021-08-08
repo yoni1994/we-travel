@@ -12,8 +12,8 @@ const tripSchema = Schema({
   attendees:[{type: mongoose.Schema.Types.ObjectId, ref: "Profile"}],
   budget: budgetSchema,
   country: {type: mongoose.Schema.Types.ObjectId, ref: "Country"},
-  date: Date,
-  notes: String,
+  date: {type: Date},
+  notes: {type: String},
   checklist: [{type: mongoose.Schema.Types.ObjectId, ref: "Checklist"}]
 }, {
   timestamps: true,
