@@ -5,7 +5,7 @@ const Schema = mongoose.Schema
 const budgetSchema = Schema({
   name: {type: String},
   total: {type: Number},
-  owner: {type: Schema.Types.ObjectId, 'ref': "Profile"},
+  owner: {type: Schema.Types.ObjectId, ref: "Profile"},
   travel: {type: Number},
   lodging: {type: Number},
   food: {type: Number},
@@ -19,8 +19,8 @@ const tripSchema = Schema({
   attendees:[{type: mongoose.Schema.Types.ObjectId, ref: "Profile"}],
   budget: budgetSchema,
   country: {type: mongoose.Schema.Types.ObjectId, ref: "Country"},
-  date: Date,
-  notes: String,
+  date: {type: Date},
+  notes: {type: String},
   checklist: [{type: mongoose.Schema.Types.ObjectId, ref: "Checklist"}]
 }, {
   timestamps: true,
