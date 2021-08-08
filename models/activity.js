@@ -18,7 +18,9 @@ const activitySchema = new Schema({
   attendees: [{type: Schema.Types.ObjectId, 'ref': "Profile"}],
   owner: {type: Schema.Types.ObjectId, 'ref': "Profile"},
   isKeyActivity: {type: Boolean},
-}, {timeStamps: true})
+}, {
+  timeStamps: true
+})
 
 const Activity = mongoose.model('Activity', activitySchema)
 
