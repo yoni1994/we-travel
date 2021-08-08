@@ -1,8 +1,8 @@
 import mongoose from 'mongoose'
 
 const profileSchema = new mongoose.Schema({
-    name: String,
-    avatar: String,
+    name: {type: String},
+    avatar: {type: String},
 }, {
     timestamps: true
 })
