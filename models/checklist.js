@@ -3,7 +3,7 @@ const Schema = mongoose.Schema
 
 
 const checklistSchema = new mongoose.Schema({
-    owner: {type: Schema.Types.ObjectId, 'ref': "Profile"},
+    owner: {type: Schema.Types.ObjectId, ref: "Profile"},
     name: {type: String},
     items: {type: [String]},
 }, {
