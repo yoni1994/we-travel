@@ -17,8 +17,8 @@ const activitySchema = new Schema({
   cost: {type: Number},
   budgetCategory: {type: String, enum: ['travel', 'lodging', 'food', 'activities', 'misc']},
   date: {type: Date},
-  attendees: [{type: Schema.Types.ObjectId, 'ref': "Profile"}],
-  owner: {type: Schema.Types.ObjectId, 'ref': "Profile"},
+  attendees: [{type: Schema.Types.ObjectId, ref: "Profile"}],
+  owner: {type: Schema.Types.ObjectId, ref: "Profile"},
   isKeyActivity: {type: Boolean},
 }, {
   timeStamps: true
