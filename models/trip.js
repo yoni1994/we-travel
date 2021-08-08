@@ -3,7 +3,7 @@ import mongoose from 'mongoose'
 const Schema = mongoose.Schema
 
 const budgetSchema = Schema({
-  amount: Number
+  amount: {type: Number},
 })
 
 const tripSchema = Schema({
