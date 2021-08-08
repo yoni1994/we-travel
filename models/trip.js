@@ -3,7 +3,14 @@ import mongoose from 'mongoose'
 const Schema = mongoose.Schema
 
 const budgetSchema = Schema({
-  amount: Number
+  name: {type: String},
+  total: {type: Number},
+  owner: {type: Schema.Types.ObjectId, 'ref': "Profile"},
+  travel: {type: Number},
+  lodging: {type: Number},
+  food: {type: Number},
+  activities: {type: Number},
+  misc: {type: Number},
 })
 
 const tripSchema = Schema({
