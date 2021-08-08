@@ -7,7 +7,7 @@ const budgetSchema = Schema({
 })
 
 const tripSchema = Schema({
-  owner: { type: mongoose.Schema.ObjectId, ref: 'Profile' },
+  owner: { type: mongoose.Schema.Types.ObjectId, ref: "Profile" },
   name: {type: String},
   img: {type: String},
   attendees:[{type: mongoose.Schema.Types.ObjectId, ref: "Profile"}],
