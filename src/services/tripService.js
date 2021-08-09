@@ -28,7 +28,12 @@ async function create(trip){
 
 async function getAll(){
     try {
-        const res = await fetch(BASE_URL)
+        const res = await fetch(BASE_URL, {
+            headers: {
+            'content-type': 'application/json',
+            'Authorization': `Bearer ${tokenService.getToken()}`
+            }
+        }, {mode: 'cors'})
         const data = await res.json()
         return data
     } catch (error) {
