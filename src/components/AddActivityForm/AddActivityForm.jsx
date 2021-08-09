@@ -5,9 +5,18 @@ import styles from './AddActivityForm.module.css'
 
 // Services
 
-function AddTripForm(props) {
+function AddActivityForm(props) {
   const [formData, setFormData] = useState({
-   
+    name: '',
+    location: '',
+    address: null,
+    info: '',
+    cost: 0,
+    budgetCategory: '',
+    date: '',
+    attendees: [],
+    owner: '',
+    isKeyActivity: false
   })
   
  
@@ -19,4 +28,4 @@ function AddTripForm(props) {
   )
 }
 
-export default AddTripForm
+export default AddActivityForm
