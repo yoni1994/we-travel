@@ -37,9 +37,10 @@ async function show(req, res) {
 
 async function update(req, res) {
     try {
-
-    }
-    catch(error){
-
+        const activity = await Activity.findByIdAndUpdate(req.params.id, req.body, {new: true});
+        res.status(200).json(activity);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json(error);
     }
 }
