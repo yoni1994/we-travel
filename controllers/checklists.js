@@ -3,7 +3,8 @@ import { Checklist } from '../models/checklist.js'
 export {
     create,
     index,
-    show
+    show,
+    update,
 }
 
 async function create(req, res) {
@@ -31,5 +32,13 @@ async function show(req, res) {
     } catch(error){
         console.error(error);
         res.status(500).json(error);
+    }
+}
+
+async function update(req, res) {
+    try {
+
+    } catch (error) {
+
     }
 }
