@@ -12,7 +12,6 @@ function Home(props) {
           <AddTripForm/>
           <Trips/>
           <AddActivityForm/>
-          <Trip/>
       </div>
   )
 }
