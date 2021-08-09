@@ -5,6 +5,7 @@ export {
     index,
     show,
     update,
+    deleteChecklist as delete
 }
 
 async function create(req, res) {
@@ -42,5 +43,13 @@ async function update(req, res) {
     } catch (error) {
         console.error(error);
         res.status(500).json(error);
+    }
+}
+
+async function deleteChecklist(req, res){
+    try {
+
+    } catch (error) {
+
     }
 }

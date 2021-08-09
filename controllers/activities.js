@@ -5,7 +5,7 @@ export {
     index,
     show,
     update,
-    deleteTrip as delete,
+    deleteActivity as delete,
 }
 
 async function create(req, res) {
@@ -46,7 +46,7 @@ async function update(req, res) {
     }
 }
 
-async function deleteTrip(req, res){
+async function deleteActivity(req, res){
     try {
         const activity = await Activity.findByIdAndDelete(req.params.id);
         res.status(204).json(activity);
