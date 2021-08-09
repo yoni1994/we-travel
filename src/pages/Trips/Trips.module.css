@@ -1,6 +1,9 @@
-.trip-container {
+.container {
   width: 300px;
   height: 300px;
   align-items: center;
+  border: 2px solid;
+  color: blanchedalmond;
+  background-color: blue;
 
 }
