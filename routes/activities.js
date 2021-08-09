@@ -6,11 +6,11 @@ const router = Router()
 
 
 // Public Routes
+router.post('/', activitiesCtrl.create)
 
 
 // Protected Routes
 router.use(decodeUserFromToken)
-router.post('/', checkAuth, activitiesCtrl.create)
 
 export {
     router
