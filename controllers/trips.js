@@ -1,7 +1,8 @@
 import { Trip } from '../models/trip.js'
 
 export {
-    create
+    create,
+    index
 }
 
 async function create(req, res){
@@ -13,3 +14,6 @@ async function create(req, res){
     }  
 }
 
+async function index(req, res){
+    console.log('INDEX CONTROLLER TEST')
+}
