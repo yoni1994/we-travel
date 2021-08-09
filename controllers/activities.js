@@ -48,8 +48,10 @@ async function update(req, res) {
 
 async function deleteTrip(req, res){
     try {
-        
+        const activity = await Activity.findByIdAndDelete(req.params.id);
+        res.status(204).json(activity);
     } catch (error) {
-        
+        console.error(error);
+        res.status(500).json(error);
     }
 }
