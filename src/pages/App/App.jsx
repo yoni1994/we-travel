@@ -48,7 +48,7 @@ const App = () => {
 				{user ? <Home /> : <Redirect to='/login'/>}
 			</Route>
 			<Route path='/trips'>
-				{user ? <Trips /> : <Redirect to='/login'/>}
+				{user ? <Trips user={user} /> : <Redirect to='/login'/>}
 			</Route>
 		</>
 	)
