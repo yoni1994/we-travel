@@ -3,7 +3,7 @@ import styles from './TripCard.module.css'
 import { NavLink } from 'react-router-dom'
 
 
-function Card(props) {
+function TripCard(props) {
     return (
         <NavLink to={`/trips/${props.trip._id}`}>
             <div className={styles.container}>
@@ -16,4 +16,4 @@ function Card(props) {
     )
 }
 
-export default Card;
+export default TripCard;
