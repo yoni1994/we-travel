@@ -15,5 +15,10 @@ async function create(req, res){
 }
 
 async function index(req, res) {
-    
+    try {
+        const activities = await Activity.find({})
+        return res.status(200).json(activities)
+    } catch (error) {
+        return res.status(500).json(error)
+    }
 }
