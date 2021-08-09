@@ -1,0 +1,1 @@
+import * as activitiesCtrl from '../controllers/activities.js'
