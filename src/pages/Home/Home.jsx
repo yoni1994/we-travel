@@ -1,7 +1,6 @@
 import React from 'react';
 import AddTripForm from '../../components/AddTripForm/AddTripForm'
 import Trips from '../../pages/Trips/Trips'
-import Trip from '../../pages/Trip/Trip'
 import AddActivityForm from '../../components/AddActivityForm/AddActivityForm'
 
 

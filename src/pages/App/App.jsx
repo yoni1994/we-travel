@@ -8,6 +8,7 @@ import Users from '../Users/Users'
 import * as authService from '../../services/authService'
 import Home from '../Home/Home'
 import Trips from '../Trips/Trips'
+import Trip from '../Trip/Trip'
 
 const App = () => {
 	const history = useHistory()
@@ -53,5 +54,5 @@ const App = () => {
 		</>
 	)
 }
- 
+
 export default App
