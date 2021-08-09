@@ -8,6 +8,7 @@ import cors from 'cors'
 import { router as usersRouter } from './routes/users.js'
 import { router as authRouter } from './routes/auth.js'
 import { router as tripsRouter } from './routes/trips.js'
+import { router as activitiesRouter } from './routes/activities.js'
 
 import './config/database.js'
 
