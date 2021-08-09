@@ -47,17 +47,11 @@ function Trips(props) {
           <p>Hello World! I'm the Trips component.</p> 
             {trips.map(trip => {
               return (
-                <Route 
-                  path='/trips'
-                  key={trip._id}
-                >
-				          {props.user ? 
                     <TripCard
-                      
-                      trip={trip}
+                    key={trip._id}
+                    trip={trip}
+                    
                     /> 
-                    : <Redirect to='/login'/>}
-			          </Route>         
               )
             })}
       </div>

@@ -5,6 +5,7 @@ export {
     deleteOne,
     getAll,
     update,
+    getTripById,
 }
 
 const BASE_URL = '/api/trips/'
@@ -52,6 +53,20 @@ async function deleteOne(){
 async function update(){
     try{
 
+    } catch (error) {
+        throw error
+    }
+}
+
+async function getTripById (id) {
+    try {
+        const res = await fetch(`${BASE_URL}${id}`, {
+            headers: {
+                "Authorization":`Bearer ${tokenService.getToken()}`
+            }
+        },{ mode: 'cors' })
+        const data = await res.json()
+        return data
     } catch (error) {
         throw error
     }

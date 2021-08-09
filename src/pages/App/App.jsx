@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Route, Redirect, useHistory } from 'react-router-dom'
+import { Route, Redirect, useHistory, Switch } from 'react-router-dom'
 import NavBar from '../../components/NavBar/NavBar'
 import Signup from '../Signup/Signup'
 import Login from '../Login/Login'
@@ -8,6 +8,7 @@ import Users from '../Users/Users'
 import * as authService from '../../services/authService'
 import Home from '../Home/Home'
 import Trips from '../Trips/Trips'
+import Trip from '../Trip/Trip'
 
 const App = () => {
 	const history = useHistory()
@@ -24,8 +25,9 @@ const App = () => {
 	}
 
 	return (
-		<>
+			<div>
 			<NavBar user={user} handleLogout={handleLogout}/>
+			
 			<Route exact path='/'>
 				<Landing user={user} />
 			</Route>
@@ -50,8 +52,13 @@ const App = () => {
 			<Route path='/trips'>
 				{user ? <Trips user={user} /> : <Redirect to='/login'/>}
 			</Route>
-		</>
+
+			<Route exact path='/trips/:id'>
+				{user ? <Trip user={user} /> : <Redirect to='/login'/>}
+			</Route>
+		
+		</div>
 	)
 }
- 
+
 export default App
