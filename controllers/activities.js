@@ -1,7 +1,8 @@
 import { Activity } from '../models/activity.js'
 
 export {
-    create
+    create,
+    index,
 }
 
 async function create(req, res){
@@ -11,4 +12,8 @@ async function create(req, res){
     } catch (err) {
         return res.status(500).json({err: err.message})
     }  
+}
+
+async function index(req, res) {
+    
 }
