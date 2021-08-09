@@ -5,6 +5,7 @@ export {
     index,
     show,
     update,
+    deleteTrip as delete,
 }
 
 async function create(req, res) {
@@ -39,6 +40,16 @@ async function update(req, res) {
     try {
         const activity = await Activity.findByIdAndUpdate(req.params.id, req.body, {new: true});
         res.status(200).json(activity);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json(error);
+    }
+}
+
+async function deleteTrip(req, res){
+    try {
+        const activity = await Activity.findByIdAndDelete(req.params.id);
+        res.status(204).json(activity);
     } catch (error) {
         console.error(error);
         res.status(500).json(error);

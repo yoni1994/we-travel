@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom'
+import { Route, Redirect, useHistory } from 'react-router-dom'
 import styles from './Trips.module.css'
+
+// Services
 import * as tripService from '../../services/tripService'
+
+// Components
+import TripCard from '../../components/TripCard/TripCard'
 
 function Trips(props) {
   const history = useHistory()
@@ -40,21 +45,21 @@ function Trips(props) {
   return (
       <div className={styles.container}>
           <p>Hello World! I'm the Trips component.</p> 
-          <ul>
             {trips.map(trip => {
               return (
-                <>
-                <p>{trip.date}</p>
-                <li
+                <Route 
+                  path='/trips'
                   key={trip._id}
-                  trip={trip}
                 >
-                  {trip.name}
-                </li>
-                </>
+				          {props.user ? 
+                    <TripCard
+                      
+                      trip={trip}
+                    /> 
+                    : <Redirect to='/login'/>}
+			          </Route>         
               )
             })}
-          </ul>
       </div>
   )
 }
