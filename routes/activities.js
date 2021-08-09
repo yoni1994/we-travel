@@ -14,6 +14,8 @@ router.get('/', checkAuth, activitiesCtrl.index)
 router.get('/:id', checkAuth, activitiesCtrl.show)
 router.post('/', checkAuth, activitiesCtrl.create)
 router.put('/:id', checkAuth, activitiesCtrl.update)
+router.delete('/:id', checkAuth, activitiesCtrl.delete);
+
 
 export {
     router
