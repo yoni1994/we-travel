@@ -3,7 +3,8 @@ import { Checklist } from '../models/checklist.js'
 export {
     create,
     index,
-    show
+    show,
+    update,
 }
 
 async function create(req, res) {
@@ -29,6 +30,16 @@ async function show(req, res) {
         const checklist = await Checklist.findById(req.params.id);
         res.status(200).json(checklist);
     } catch(error){
+        console.error(error);
+        res.status(500).json(error);
+    }
+}
+
+async function update(req, res) {
+    try {
+        const checklist = await Checklist.findByIdAndUpdate(req.params.id, req.body, {new: true});
+        res.status(200).json(checklist);
+    } catch (error) {
         console.error(error);
         res.status(500).json(error);
     }
