@@ -16,8 +16,9 @@ async function create(req, res) {
 
 async function index(req, res) {
     try {
-        
+        const checklist = await Checklist.find({})
+        return res.status(200).json(checklist)
     } catch (error) {
-
+        return res.status(500).json(error)
     }
 }
