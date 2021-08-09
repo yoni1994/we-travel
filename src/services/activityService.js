@@ -1,13 +1,16 @@
 import * as tokenService from './tokenService'
 
 export {
-    createActivity,
-    getActivities
+    create,
+    getAll,
+    getOne,
+    update,
+    deleteOne
 }
 
 const BASE_URL = '/api/activities/'
 
-async function createActivity(activity){
+async function create(activity){
     try {
         const res = await fetch(BASE_URL, {
             method: 'POST',
@@ -24,12 +27,39 @@ async function createActivity(activity){
     }
 }
 
-async function getActivities(){
+async function getAll(){
     try {
         const res = await fetch(BASE_URL)
         const data = await res.json()
         return data
     } catch (error) {
+        throw error
+    }
+}
+
+async function getOne(){
+    try{
+
+    }
+    catch (error) {
+        throw error
+    }
+}
+
+async function update(){
+    try{
+
+    }
+    catch (error) {
+        throw error
+    }
+}
+
+async function deleteOne(){
+    try{
+
+    }
+    catch (error) {
         throw error
     }
 }

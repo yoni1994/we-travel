@@ -4,7 +4,7 @@ import React, {useState} from 'react';
 import styles from './AddActivityForm.module.css'
 
 // Services
-import { createActivity } from '../../services/activityService.js'
+import { create } from '../../services/activityService.js'
 
 
 function AddActivityForm(props) {
@@ -39,7 +39,7 @@ function AddActivityForm(props) {
         // owner: '',
         isKeyActivity: false,
     })
-    createActivity(formData)
+    create(formData)
   }
   
  
