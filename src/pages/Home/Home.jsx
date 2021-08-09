@@ -1,5 +1,6 @@
 import React from 'react';
 import AddTripForm from '../../components/AddTripForm/AddTripForm'
+import Trips from '../../pages/Trips/Trips'
 import AddActivityForm from '../../components/AddActivityForm/AddActivityForm'
 
 
@@ -8,6 +9,7 @@ function Home(props) {
       <div>
           <p>Hello World! I'm the Home component.</p> 
           <AddTripForm/>
+          <Trips/>
           <AddActivityForm/>
       </div>
   )
