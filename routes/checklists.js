@@ -13,6 +13,8 @@ router.use(decodeUserFromToken)
 router.get('/', checkAuth, checklistsCtrl.index)
 router.get('/:id', checkAuth, checklistsCtrl.show)
 router.post('/', checkAuth, checklistsCtrl.create)
+router.put('/:id', checkAuth, checklistsCtrl.update)
+
 
 
 
