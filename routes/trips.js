@@ -11,6 +11,8 @@ const router = Router()
 router.use(decodeUserFromToken)
 router.get('/', tripsCtrl.index)
 router.post('/', checkAuth, tripsCtrl.create)
+router.put('/:id', tripsCtrl.update);
+router.delete('/:id', tripsCtrl.delete);
 
 export {
     router
