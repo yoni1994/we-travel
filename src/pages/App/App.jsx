@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Route, Redirect, useHistory } from 'react-router-dom'
+import { Route, Redirect, useHistory, Switch } from 'react-router-dom'
 import NavBar from '../../components/NavBar/NavBar'
 import Signup from '../Signup/Signup'
 import Login from '../Login/Login'
@@ -25,8 +25,9 @@ const App = () => {
 	}
 
 	return (
-		<>
+			<div>
 			<NavBar user={user} handleLogout={handleLogout}/>
+			
 			<Route exact path='/'>
 				<Landing user={user} />
 			</Route>
@@ -51,10 +52,12 @@ const App = () => {
 			<Route path='/trips'>
 				{user ? <Trips user={user} /> : <Redirect to='/login'/>}
 			</Route>
-			<Route path='/trips/:id'>
+
+			<Route exact path='/trips/:id'>
 				{user ? <Trip user={user} /> : <Redirect to='/login'/>}
 			</Route>
-		</>
+		
+		</div>
 	)
 }
 
