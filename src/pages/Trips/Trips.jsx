@@ -6,6 +6,7 @@ import * as tripService from '../../services/tripService'
 function Trips(props) {
   const history = useHistory()
   const [trips, setTrips] = useState([])
+  
   const handleAddTrip = async (newTripData) => {
     const newTrip = await tripService.create(newTripData);
     setTrips([...trips, newTrip]);
@@ -39,11 +40,21 @@ function Trips(props) {
   return (
       <div className={styles.container}>
           <p>Hello World! I'm the Trips component.</p> 
-          <p>Date for my trip</p>
           <ul>
-            <li>Trip Atendess</li>
+            {trips.map(trip => {
+              return (
+                <>
+                <p>{trip.date}</p>
+                <li
+                  key={trip._id}
+                  trip={trip}
+                >
+                  {trip.name}
+                </li>
+                </>
+              )
+            })}
           </ul>
-          
       </div>
   )
 }
