@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import {history} from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import styles from './Trips.module.css'
 import * as tripService from '../../services/tripService'
 
 function Trips(props) {
+  const history = useHistory()
   const [trips, setTrips] = useState([])
   const handleAddTrip = async (newTripData) => {
     const newTrip = await tripService.createTrip(newTripData);
@@ -12,22 +13,22 @@ function Trips(props) {
   }
   
   const handleDeleteTrip = id => {
-    tripService.deleteOne(id)
-     .then(
+    tripService.deleteTrips(id)
+      .then(
         setTrips(trips.filter(trip => id !== trip._id))
-     )
+      )
     
   }
   
   const handleUpdateTrip = updatedTripData => {
     tripService.update(updatedTripData)
-     .then(updatedTrip => {
+      .then(updatedTrip => {
       const newTripsArray = trips.map(trip => 
         (trip._id === updatedTrip._id ? updatedTrip : trip)
       )
       setTrips(newTripsArray);
       history.push('/');
-     })
+      })
   }
   
   useEffect(() => {

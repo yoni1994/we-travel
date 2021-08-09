@@ -2,8 +2,10 @@ import * as tokenService from './tokenService'
 
 export {
     createTrip,
-    getTrips
-
+    getTrips,
+    deleteTrips,
+    getAll,
+    update,
 }
 
 const BASE_URL = '/api/trips/'
@@ -30,6 +32,30 @@ async function getTrips(){
         const res = await fetch(BASE_URL)
         const data = await res.json()
         return data
+    } catch (error) {
+        throw error
+    }
+}
+
+async function deleteTrips(){
+    try{
+
+    } catch (error) {
+        throw error
+    }
+}
+
+async function getAll(){
+    try{
+
+    } catch (error) {
+        throw error
+    }
+}
+
+async function update(){
+    try{
+
     } catch (error) {
         throw error
     }
