@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import styles from './Trip.module.css'
 import * as tripService from '../../services/tripService'
+import { useParams } from 'react-router-dom'
 
 function Trip(props) {
-  const { id } = props.match.params
-  const [trip, setTrip] = useState()
+  console.log(props)
+  const { id } = useParams()
+  const [trip, setTrip] = useState({})
 
   useEffect(() => {
     const fetchTrip = async () => {
@@ -21,9 +23,9 @@ function Trip(props) {
 
   return (
     <div className={styles.container}>
-    <h1>{props.trip.name}</h1>
-    <h2>{props.trip.notes}</h2>
-    <h3>{props.trip.date}</h3>
+    <h1>{trip.name}</h1>
+    <h2>{trip.notes}</h2>
+    <h3>{trip.date}</h3>
 </div>
   )
 }

@@ -60,7 +60,11 @@ async function update(){
 
 async function getTripById (id) {
     try {
-        const res = await fetch(`${BASE_URL}${id}`, { mode: 'cors' })
+        const res = await fetch(`${BASE_URL}${id}`, {
+            headers: {
+                "Authorization":`Bearer ${tokenService.getToken()}`
+            }
+        },{ mode: 'cors' })
         const data = await res.json()
         return data
     } catch (error) {
