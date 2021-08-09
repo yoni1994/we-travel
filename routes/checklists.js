@@ -11,6 +11,7 @@ const router = Router()
 // Protected Routes
 router.use(decodeUserFromToken)
 router.get('/', checkAuth, checklistsCtrl.index)
+router.get('/:id', checkAuth, checklistsCtrl.show)
 router.post('/', checkAuth, checklistsCtrl.create)
 
 
