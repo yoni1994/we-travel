@@ -26,8 +26,10 @@ async function index(req, res) {
 
 async function show(req, res) {
     try {
-       
+        const checklist = await Checklist.findById(req.params.id);
+        res.status(200).json(checklist);
     } catch(error){
-        
+        console.error(error);
+        res.status(500).json(error);
     }
 }
