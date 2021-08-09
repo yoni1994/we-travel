@@ -3,6 +3,7 @@ import { Trip } from '../models/trip.js'
 export {
     create,
     index,
+    show,
     update,
     deleteTrip as delete
 }
@@ -22,6 +23,16 @@ async function index(req, res){
         return res.status(200).json(trips)
     } catch (error) {
         return res.status(500).json(error)
+    }
+}
+
+async function show(req, res){
+    try {
+        const trip = await Trip.findById(req.params.id);
+        res.status(200).json(trip);
+    } catch(error){
+        console.error(error);
+        res.status(500).json(error);
     }
 }
 
