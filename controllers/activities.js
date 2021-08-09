@@ -25,5 +25,11 @@ async function index(req, res) {
 }
 
 async function show(req, res){
-   
+    try {
+        const activity = await Activity.findById(req.params.id);
+        res.status(200).json(activity);
+    } catch(error){
+        console.error(error);
+        res.status(500).json(error);
+    }
 }
