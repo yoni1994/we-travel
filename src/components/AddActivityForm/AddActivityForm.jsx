@@ -20,6 +20,10 @@ function AddActivityForm(props) {
     owner: '',
     isKeyActivity: false
   })
+
+  const handleChange = (e) => {
+    setFormData({...formData, [e.target.name]: e.target.value})
+  }
   
  
 
