@@ -4,9 +4,10 @@ export {
     create,
     index,
     show,
+    update,
 }
 
-async function create(req, res){
+async function create(req, res) {
     try {
         const activity = await Activity.create(req.body);  
         return res.status(201).json(activity)    
@@ -24,12 +25,21 @@ async function index(req, res) {
     }
 }
 
-async function show(req, res){
+async function show(req, res) {
     try {
         const activity = await Activity.findById(req.params.id);
         res.status(200).json(activity);
     } catch(error){
         console.error(error);
         res.status(500).json(error);
+    }
+}
+
+async function update(req, res) {
+    try {
+
+    }
+    catch(error){
+
     }
 }
