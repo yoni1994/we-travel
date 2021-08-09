@@ -4,7 +4,7 @@ import React, {useState} from 'react';
 import styles from './AddTripForm.module.css'
 
 // Services
-import { createTrip } from '../../services/tripService'
+import { create } from '../../services/tripService'
 
 function AddTripForm(props) {
   const [formData, setFormData] = useState({
@@ -24,7 +24,7 @@ function AddTripForm(props) {
       date: '',
       notes: ''
     })
-    createTrip(formData)
+    create(formData)
   }
 
   return (

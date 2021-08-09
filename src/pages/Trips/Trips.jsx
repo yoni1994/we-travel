@@ -7,13 +7,13 @@ function Trips(props) {
   const history = useHistory()
   const [trips, setTrips] = useState([])
   const handleAddTrip = async (newTripData) => {
-    const newTrip = await tripService.createTrip(newTripData);
+    const newTrip = await tripService.create(newTripData);
     setTrips([...trips, newTrip]);
     history.push('/');
   }
   
   const handleDeleteTrip = id => {
-    tripService.deleteTrips(id)
+    tripService.deleteOne(id)
       .then(
         setTrips(trips.filter(trip => id !== trip._id))
       )
