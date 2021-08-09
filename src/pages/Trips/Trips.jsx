@@ -1,5 +1,9 @@
 import React from 'react';
 import styles from './Trips.module.css'
+import {
+  createTrip,
+  getTrips,
+} from '../../services/tripService'
 
 function Trips(props) {
   return (
