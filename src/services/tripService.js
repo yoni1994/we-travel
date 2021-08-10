@@ -55,9 +55,18 @@ async function deleteOne(id){
     }
 }
 
-async function update(){
+async function update(trip){
     try{
-
+        const res = await fetch(`${BASE_URL}${trip._id}`, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json',
+                'Authorization': `Bearer ${tokenService.getToken()}`
+            },
+            body: JSON.stringify(trip)
+        }, {mode: 'cors'})
+        const data = await res.json()
+        return data
     } catch (error) {
         throw error
     }
