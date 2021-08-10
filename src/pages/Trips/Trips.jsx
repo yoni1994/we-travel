@@ -16,7 +16,6 @@ function Trips(props) {
   const handleAddTrip = async (newTripData) => {
     const newTrip = await tripService.create(newTripData);
     setTrips([newTrip, ...trips]);
-    // history.push('/');
   }
   
   const handleDeleteTrip = id => {
@@ -54,6 +53,7 @@ function Trips(props) {
                 <TripCard
                   key={trip._id}
                   trip={trip}
+                  handleDeleteTrip={handleDeleteTrip}
                 /> 
               )
             })}
