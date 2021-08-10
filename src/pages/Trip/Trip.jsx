@@ -37,6 +37,7 @@ function Trip(props) {
       <h3>{trip.date}</h3>
       <button type="button">Edit Trip</button>
       <EditTripForm
+        trip={trip}
         handleUpdateTrip={handleUpdateTrip}
       />
     </div>

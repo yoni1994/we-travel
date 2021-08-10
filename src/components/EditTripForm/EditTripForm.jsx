@@ -3,11 +3,11 @@ import React, { useState } from 'react';
 // Styles
 import styles from './EditTripForm.module.css'
 
-function EditTripForm(props) {
+function EditTripForm({trip, handleUpdateTrip}) {
   const [formData, setFormData] = useState({
-    name: '',
-    date: '',
-    notes: ''
+    name: trip.name,
+    date: trip.date,
+    notes: trip.notes
   })
   
   const handleChange = (e) => {
@@ -16,12 +16,7 @@ function EditTripForm(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    props.handleUpdateTrip(formData)
-    setFormData({
-      name: '',
-      date: '',
-      notes: ''
-    })
+    handleUpdateTrip(formData)
   }
 
   return (
