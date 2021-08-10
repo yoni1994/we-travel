@@ -10,7 +10,7 @@ function AddChecklistForm(props) {
   })
 
   const handleChange = (e) => {
-    setChecklistData({...checklistData, [e.target.owner]: e.target.value})
+    setChecklistData({...checklistData, [e.target.name]: e.target.value})
   }
 
   const handleSubmit = (e) => {
