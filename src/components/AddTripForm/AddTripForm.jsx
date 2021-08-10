@@ -4,7 +4,6 @@ import React, {useState} from 'react';
 import styles from './AddTripForm.module.css'
 
 // Services
-import { create } from '../../services/tripService'
 
 function AddTripForm(props) {
   const [formData, setFormData] = useState({
@@ -28,9 +27,13 @@ function AddTripForm(props) {
   }
 
   return (
-      <div>
+      <div className={styles.container}>
         <h2>Add Trip</h2>
-        <form id="add-trip-form" onSubmit={handleSubmit}>
+        <form 
+           id="add-trip-form" 
+           onSubmit={handleSubmit}
+           className={styles.form}
+        >
           <label htmlFor="trip-name">Name</label>
           <input
             id="trip-name" 
@@ -40,6 +43,7 @@ function AddTripForm(props) {
             onChange={handleChange}
             autoComplete="off"
             placeholder="trip name"
+            required
           />
           <label htmlFor="trip-date">Date</label>
           <input 
