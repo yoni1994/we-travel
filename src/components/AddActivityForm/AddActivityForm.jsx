@@ -40,7 +40,6 @@ function AddActivityForm(props) {
         // owner: '',
         isKeyActivity: false,
     })
-    create(formData)
   }
 
 
