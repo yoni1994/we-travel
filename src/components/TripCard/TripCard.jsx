@@ -10,6 +10,14 @@ function TripCard(props) {
                 <h2>{props.trip.name}</h2>
                 <p>{props.trip.notes}</p>
                 {props.trip.date}
+                <p>
+                    <button 
+                       type="button"
+                       
+                    >
+                           Delete Trip
+                    </button>
+                </p>
             </div>
         </Link>
 
