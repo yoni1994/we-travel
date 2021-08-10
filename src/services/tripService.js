@@ -42,9 +42,14 @@ async function getAll(){
     }
 }
 
-async function deleteOne(){
-    try{
-
+async function deleteOne(id){
+    try {
+        await fetch(`${BASE_URL}${id}`, {
+            method: 'DELETE',
+            headers: {
+                'Authorization': `Bearer ${tokenService.getToken()}`
+            }
+        }, {mode: 'cors'})
     } catch (error) {
         throw error
     }
