@@ -23,7 +23,6 @@ function Trips(props) {
       .then(
         setTrips(trips.filter(trip => id !== trip._id))
       )
-    
   }
   
   useEffect(() => {

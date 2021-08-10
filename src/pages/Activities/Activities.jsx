@@ -17,6 +17,13 @@ function Activities(props) {
     const newActivity = await activityService.create(newActivityData);
     setActivities([newActivity, ...activities]);
   }
+
+  const handleDeleteActivity = id => {
+    activityService.deleteOne(id)
+      .then(
+        setActivities(activities.filter(trip => id !== trip._id))
+      ) 
+  }
   
   return (
       <div className={styles.container}>
