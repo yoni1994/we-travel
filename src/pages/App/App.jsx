@@ -46,10 +46,10 @@ const App = () => {
 			<Route exact path='/users'>
 				{user ? <Users /> : <Redirect to='/login' />}
 			</Route>
-			<Route path='/home'>
+			<Route exact path='/home'>
 				{user ? <Home /> : <Redirect to='/login'/>}
 			</Route>
-			<Route path='/trips'>
+			<Route exact path='/trips'>
 				{user ? <Trips user={user} /> : <Redirect to='/login'/>}
 			</Route>
 
