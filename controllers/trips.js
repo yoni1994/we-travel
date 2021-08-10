@@ -10,6 +10,8 @@ export {
 
 async function create(req, res){
     try {
+        console.log(req.user.profile)
+
         const trip = await Trip.create(req.body)  
         return res.status(201).json(trip)    
     } catch (error) {
