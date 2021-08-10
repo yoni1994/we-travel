@@ -20,3 +20,7 @@ html {
 .container:hover {
     background-color: lightblue;
 }
+
+a {
+  text-decoration: none;
+}

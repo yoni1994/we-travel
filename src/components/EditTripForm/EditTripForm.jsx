@@ -9,7 +9,7 @@ function EditTripForm({trip, handleUpdateTrip}) {
     date: trip.date,
     notes: trip.notes,
   })
-  
+
   const handleChange = (e) => {
     setFormData({...formData, [e.target.name]: e.target.value})
   }
