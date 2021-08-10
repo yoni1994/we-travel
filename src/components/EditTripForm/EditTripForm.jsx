@@ -1,10 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 // Styles
 import styles from './EditTripForm.module.css'
-
-// Services
-import { create } from '../../services/tripService'
 
 function EditTripForm(props) {
   const [formData, setFormData] = useState({
@@ -60,7 +57,7 @@ function EditTripForm(props) {
             placeholder="type trip notes here"
           ></textarea>
           <button type="submit">
-            Edit Trip
+            Save
           </button>
         </form>
       </div>
