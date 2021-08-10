@@ -26,17 +26,6 @@ function Trips(props) {
     
   }
   
-  const handleUpdateTrip = updatedTripData => {
-    tripService.update(updatedTripData)
-      .then(updatedTrip => {
-      const newTripsArray = trips.map(trip => 
-        (trip._id === updatedTrip._id ? updatedTrip : trip)
-      )
-      setTrips(newTripsArray);
-      history.push('/');
-      })
-  }
-  
   useEffect(() => {
     tripService.getAll()
       .then(allTrips => setTrips(allTrips))
