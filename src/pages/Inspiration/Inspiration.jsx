@@ -12,7 +12,6 @@ function Inspiration(){
     return (
         <div className={styles.container}>
 
-            <h1>Inspiration</h1>
             <ImageCard/>
 
         </div>

@@ -28,4 +28,5 @@ html {
     min-height: 100vh;
     color: blanchedalmond;
     background-color: var(--jelly-bean);
+    padding: 25px;
   }
