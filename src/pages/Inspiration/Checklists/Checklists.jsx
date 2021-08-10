@@ -6,8 +6,8 @@ import styles from './Checklists.module.css'
 // import * as tripService from '../../services/tripService'
 
 // Components
-// import TripCard from '../../components/TripCard/TripCard'
-// import AddTripForm from '../../components/AddTripForm/AddTripForm'
+import ChecklistCard from '../../components/ChecklistCard/ChecklistCard'
+import AddChecklistForm from '../../components/AddChecklistForm/AddChecklistForm'
 
 function Checklists(props) {
   const history = useHistory()
@@ -15,7 +15,7 @@ function Checklists(props) {
   
   const handleAddChecklist = async (newChecklistData) => {
     const newChecklist = await checklistService.create(newChecklistData);
-    setChecklits([newChecklist, ...checklists]);
+    setChecklists([newChecklist, ...checklists]);
   }
   
   const handleDeleteChecklist = id => {
@@ -38,10 +38,10 @@ function Checklists(props) {
           <p>Hello World! I'm the Trips component.</p> 
             {checklists.map(checklist => {
               return (
-                <TripCard
-                  key={trip._id}
-                  trip={trip}
-                  handleDeleteTrip={handleDeleteTrip}
+                <ChecklistCard
+                  key={checklist._id}
+                  checklist={checklist}
+                  handleDeleteChecklist={handleDeleteChecklist}
                 /> 
               )
             })}
