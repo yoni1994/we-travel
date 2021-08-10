@@ -19,12 +19,12 @@ function AddTripForm(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    props.handleAddTrip(formData)
     setFormData({
       name: '',
       date: '',
       notes: ''
     })
-    create(formData)
   }
 
   return (

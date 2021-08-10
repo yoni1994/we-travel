@@ -7,6 +7,7 @@ import * as tripService from '../../services/tripService'
 
 // Components
 import TripCard from '../../components/TripCard/TripCard'
+import AddTripForm from '../../components/AddTripForm/AddTripForm'
 
 function Trips(props) {
   const history = useHistory()
@@ -14,8 +15,8 @@ function Trips(props) {
   
   const handleAddTrip = async (newTripData) => {
     const newTrip = await tripService.create(newTripData);
-    setTrips([...trips, newTrip]);
-    history.push('/');
+    setTrips([newTrip, ...trips]);
+    // history.push('/');
   }
   
   const handleDeleteTrip = id => {
@@ -44,14 +45,16 @@ function Trips(props) {
   
   return (
       <div className={styles.container}>
+        <AddTripForm
+          handleAddTrip={handleAddTrip}
+        ></AddTripForm>
           <p>Hello World! I'm the Trips component.</p> 
             {trips.map(trip => {
               return (
-                    <TripCard
-                    key={trip._id}
-                    trip={trip}
-                    
-                    /> 
+                <TripCard
+                  key={trip._id}
+                  trip={trip}
+                /> 
               )
             })}
       </div>
