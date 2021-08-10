@@ -6,6 +6,7 @@ import styles from './Activities.module.css'
 import * as activityService from '../../services/activityService'
 
 // Components
+import ActivityCard from '../../components/ActivityCard/ActivityCard'
 import AddActivityForm from '../../components/AddActivityForm/AddActivityForm'
 
 function Activities(props) {
