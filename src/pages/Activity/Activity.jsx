@@ -4,6 +4,7 @@ import styles from './Activity.module.css'
 import * as activityService from '../../services/activityService'
 import { useParams } from 'react-router-dom'
 import EditActivityForm from '../../components/EditActivityForm/EditActivityForm';
+import Trip from '../Trip/Trip';
 
 function Activity(props) {
   const { id } = useParams()
@@ -50,10 +51,12 @@ function Activity(props) {
         <h3>Cost: {activity.cost}</h3>
         {/* <h3>Budget Category: {activity.BudgetCategory}</h3> */}
         <h3>Date: {activity.date}</h3>
-        <EditActivityForm
-        activity={activity}
-        handleUpdateActivity={handleUpdateActivity}
-      />
+        {activity.name && activity.location &&
+            <EditActivityForm
+            activity={activity}
+            handleUpdateActivity={handleUpdateActivity}
+            />
+        }
     </div>
     
   )

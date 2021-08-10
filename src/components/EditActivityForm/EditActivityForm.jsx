@@ -6,8 +6,11 @@ import styles from './EditActivityForm.module.css'
 function EditActivityForm({activity, handleUpdateActivity}) {
   const [formData, setFormData] = useState({
     name: activity.name,
-    date: activity.date,
+    location: activity.location,
+    address: activity.address,
     notes: activity.notes,
+    cost: activity.cost,
+    date: activity.date,
   })
   
   const handleChange = (e) => {
