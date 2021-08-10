@@ -2,8 +2,8 @@ import * as tokenService from './tokenService'
 
 export {
     create,
-    deleteOne,
     getAll,
+    deleteOne,
     update,
     getTripById,
 }
