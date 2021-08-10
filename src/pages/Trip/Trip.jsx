@@ -10,8 +10,15 @@ function Trip(props) {
 
   const handleUpdateTrip = async (updatedTripData) => {
     try {
-      const updatedTrip = await tripService.update(updatedTripData)
-      setTrip(updatedTrip);
+      const updatedTrip = await tripService.update(updatedTripData, id)
+      const newTripState = {
+          ...trip, 
+          name: updatedTrip.name, 
+          notes: updatedTrip.notes, 
+          date: updatedTrip.date
+      }
+      setTrip(newTripState)
+      console.log(trip)
     } catch (error){
         throw error
     } 
