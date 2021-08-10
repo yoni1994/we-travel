@@ -73,11 +73,16 @@ async function update(trip, id){
     }
 }
 
-async function getActivityById(){
-    try{
-
-    }
-    catch (error) {
+async function getActivityById(id){
+    try {
+        const res = await fetch(`${BASE_URL}${id}`, {
+            headers: {
+                "Authorization":`Bearer ${tokenService.getToken()}`
+            }
+        },{ mode: 'cors' })
+        const data = await res.json()
+        return data
+    } catch (error) {
         throw error
     }
 }
