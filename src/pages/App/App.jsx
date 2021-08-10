@@ -9,6 +9,7 @@ import * as authService from '../../services/authService'
 import Home from '../Home/Home'
 import Trips from '../Trips/Trips'
 import Trip from '../Trip/Trip'
+import Activities from '../Activities/Activities'
 
 const App = () => {
 	const history = useHistory()
@@ -55,6 +56,10 @@ const App = () => {
 
 			<Route exact path='/trips/:id'>
 				{user ? <Trip user={user} /> : <Redirect to='/login'/>}
+			</Route>
+
+			<Route exact path='/trips'>
+				{user ? <Activities user={user} /> : <Redirect to='/login'/>}
 			</Route>
 		
 		</div>
