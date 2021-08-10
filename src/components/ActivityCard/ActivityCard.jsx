@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 function ActivityCard(props) {
     return (
         <>
-        <Link to={`/activitiess/${props.activity._id}`}>
+        <Link to={`/activities/${props.activity._id}`}>
             <div className={styles.container}>
                 <h2>{props.activity.name}</h2>
                 <p>{props.activity.notes}</p>
