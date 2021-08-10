@@ -25,7 +25,25 @@ html {
     height: 300px;
     width: 300px;
     border-radius: 20px;
-    padding: 5px;
     background-color: var(--geyser);
     color: var(--shark)
+  }
+
+  .imageBanner {
+    background-image: url('/src/assets/images/test/la-so-vk4vjTNVrTg-unsplash.jpg');
+    background-size: cover;
+    height: 150px;
+    width: 300px;
+    border-radius: 20px 20px 0px 0px;
+  }
+
+  .cardBody {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .cardHeader {
+      display: flex;
+      justify-content: center;
   }
