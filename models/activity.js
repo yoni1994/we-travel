@@ -14,7 +14,7 @@ const activitySchema = new Schema({
   location: {type: String},
   // address: addressSchema,
   address: {type: String},
-  info: {type: String},
+  notes: {type: String},
   cost: {type: Number},
   budgetCategory: {type: String, enum: ['travel', 'lodging', 'food', 'activities', 'misc']},
   date: {type: Date},
