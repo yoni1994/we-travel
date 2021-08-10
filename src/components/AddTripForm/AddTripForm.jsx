@@ -44,6 +44,7 @@ function AddTripForm(props) {
             onChange={handleChange}
             autoComplete="off"
             placeholder="trip name"
+            required
           />
           <label htmlFor="trip-date">Date</label>
           <input 

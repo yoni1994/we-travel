@@ -27,7 +27,10 @@ html {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: var(--geyser)
+    color: var(--geyser);
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 20px;
 }
 
 form {
