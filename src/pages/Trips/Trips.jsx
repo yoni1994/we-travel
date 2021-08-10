@@ -54,6 +54,7 @@ function Trips(props) {
                 <TripCard
                   key={trip._id}
                   trip={trip}
+                  handleDeleteTrip={handleDeleteTrip}
                 /> 
               )
             })}
