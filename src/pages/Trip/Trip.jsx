@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import styles from './Trip.module.css'
 import * as tripService from '../../services/tripService'
 import { useParams } from 'react-router-dom'
-import EditTripForm from '../../components/EditTripForm/EditTripForm';
+import EditTripForm from '../../components/EditTripForm/EditTripForm'
 
 function Trip(props) {
   const { id } = useParams()
