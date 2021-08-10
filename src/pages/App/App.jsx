@@ -57,7 +57,6 @@ const App = () => {
 			<Route exact path='/trips/:id'>
 				{user ? <Trip user={user} /> : <Redirect to='/login'/>}
 			</Route>
-
 			<Route exact path='/activities'>
 				{user ? <Activities user={user} /> : <Redirect to='/login'/>}
 			</Route>

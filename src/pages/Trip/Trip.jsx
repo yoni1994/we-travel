@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom'
 import styles from './Trip.module.css'
 import * as tripService from '../../services/tripService'
 import { useParams } from 'react-router-dom'
@@ -42,12 +43,14 @@ function Trip(props) {
       <h1>{trip.name}</h1>
       <h2>{trip.notes}</h2>
       <h3>{trip.date}</h3>
+      <Link to={'/checklist'}>Checklists</Link>
       <button type="button">Edit Trip</button>
       <EditTripForm
         trip={trip}
         handleUpdateTrip={handleUpdateTrip}
       />
     </div>
+    
   )
 }
 
