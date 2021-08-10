@@ -1,9 +1,11 @@
 import React from 'react';
 
+import styles from './ImageCard.module.css'
+
 function ImageCard(){
     return (
-        <div>
-
+        <div className={styles.card}>
+            hello world
         </div>
     )
 }
