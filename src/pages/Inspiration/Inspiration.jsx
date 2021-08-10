@@ -4,7 +4,7 @@ import styles from './Inspiration.module.css'
 
 function Inspiration(){
     return (
-        <div>
+        <div className={styles.container}>
 
             <h1>Inspiration</h1>
 
