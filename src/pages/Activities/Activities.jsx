@@ -35,7 +35,7 @@ function Activities(props) {
         <AddActivityForm
           handleAddActivity={handleAddActivity}
         ></AddActivityForm>
-        <p>Hello World! I'm the Activities component.</p> 
+        <p>Here are all your activities!</p> 
             {activities.map(activity => {
               return (
                 <ActivityCard
