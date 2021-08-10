@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import styles from './Activity.module.css'
 import * as activityService from '../../services/activityService'
 import { useParams } from 'react-router-dom'
+import EditActivityForm from '../../components/EditActivityForm/EditActivityForm';
 
 function Activity(props) {
   const { id } = useParams()
