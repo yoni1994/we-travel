@@ -2,6 +2,7 @@ import React from 'react';
 import AddTripForm from '../../components/AddTripForm/AddTripForm'
 import Trips from '../../pages/Trips/Trips'
 import AddActivityForm from '../../components/AddActivityForm/AddActivityForm'
+import AddChecklistForm from '../../components/AddChecklistForm/AddChecklistForm';
 
 
 function Home(props) {
@@ -11,6 +12,7 @@ function Home(props) {
           <AddTripForm/>
           <Trips/>
           <AddActivityForm/>
+          <AddChecklistForm />
       </div>
   )
 }
