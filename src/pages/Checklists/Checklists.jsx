@@ -13,30 +13,30 @@ function Checklists(props) {
   const history = useHistory()
   const [checklists, setChecklists] = useState([])
   
-  const handleAddChecklist = async (newChecklistData) => {
-    const newChecklist = await checklistService.create(newChecklistData);
-    setChecklists([newChecklist, ...checklists]);
-  }
+  // const handleAddChecklist = async (newChecklistData) => {
+  //   const newChecklist = await checklistService.create(newChecklistData);
+  //   setChecklists([newChecklist, ...checklists]);
+  // }
   
-  const handleDeleteChecklist = id => {
-    checklistService.deleteOne(id)
-      .then(
-        setChecklists(checklists.filter(checklist => id !== checklist._id))
-      )
-  }
+  // const handleDeleteChecklist = id => {
+  //   checklistService.deleteOne(id)
+  //     .then(
+  //       setChecklists(checklists.filter(checklist => id !== checklist._id))
+  //     )
+  // }
   
-  useEffect(() => {
-    checklistService.getAll()
-      .then(allChecklists => setChecklists(allChecklists))
-  }, []);
+  // useEffect(() => {
+  //   checklistService.getAll()
+  //     .then(allChecklists => setChecklists(allChecklists))
+  // }, []);
   
   return (
       <div className={styles.container}>
-        <AddChecklistForm
+        {/* <AddChecklistForm
           handleAddChecklist={handleAddChecklist}
-        ></AddChecklistForm>
+        ></AddChecklistForm> */}
           <p>Hello World! I'm the Trips component.</p> 
-            {checklists.map(checklist => {
+            {/* {checklists.map(checklist => {
               return (
                 <ChecklistCard
                   key={checklist._id}
@@ -44,7 +44,7 @@ function Checklists(props) {
                   handleDeleteChecklist={handleDeleteChecklist}
                 /> 
               )
-            })}
+            })} */}
       </div>
   )
 }

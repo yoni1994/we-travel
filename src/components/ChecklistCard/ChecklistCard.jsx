@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './TripCard.module.css'
+import styles from './ChecklistCard.module.css'
 import { Link } from 'react-router-dom'
 
 
