@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom'
 import styles from './Activities.module.css'
 
 // Services
@@ -8,6 +9,7 @@ import * as activityService from '../../services/activityService'
 import AddActivityForm from '../../components/AddActivityForm/AddActivityForm'
 
 function Activities(props) {
+  const history = useHistory()
   const [activities, setActivities] = useState([])
   
   const handleAddActivity = async (newActivityData) => {
