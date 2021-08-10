@@ -10,6 +10,7 @@ import Home from '../Home/Home'
 import Trips from '../Trips/Trips'
 import Trip from '../Trip/Trip'
 import Activities from '../Activities/Activities'
+import Inspiration from '../Inspiration/Inspiration'
 
 const App = () => {
 	const history = useHistory()
@@ -59,6 +60,9 @@ const App = () => {
 			</Route>
 			<Route exact path='/activities'>
 				{user ? <Activities user={user} /> : <Redirect to='/login'/>}
+			</Route>
+			<Route exact path='/inspiration'>
+				{user ? <Inspiration user={user} /> : <Redirect to='/login'/>}
 			</Route>
 		
 		</div>
