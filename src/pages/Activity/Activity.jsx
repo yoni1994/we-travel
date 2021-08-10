@@ -8,6 +8,24 @@ import EditActivityForm from '../../components/EditActivityForm/EditActivityForm
 function Activity(props) {
   const { id } = useParams()
   const [activity, setActivity] = useState({})
+
+  const handleUpdateActivity = async (updatedActivityData) => {
+    try {
+      const updatedActivity = await activityService.update(updatedActivityData, id)
+      const newActivityState = {
+          ...activity, 
+          name: updatedActivity.name,
+          location: updatedActivity.location,
+          address: updatedActivity.address,
+          notes: updatedActivity.notes,
+          cost: updatedActivity.cost,
+          date: updatedActivity.date
+      }
+      setActivity(newActivityState)
+    } catch (error){
+        throw error
+    } 
+  }
   
   useEffect(() => {
     const fetchActivity = async () => {
@@ -32,6 +50,10 @@ function Activity(props) {
         <h3>Cost: {activity.cost}</h3>
         {/* <h3>Budget Category: {activity.BudgetCategory}</h3> */}
         <h3>Date: {activity.date}</h3>
+        <EditActivityForm
+        activity={activity}
+        handleUpdateActivity={handleUpdateActivity}
+      />
     </div>
     
   )

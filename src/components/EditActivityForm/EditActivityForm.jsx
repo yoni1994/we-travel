@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 // Styles
 import styles from './EditActivityForm.module.css'
 
-function EditActivityForm({activity, handleUpdateTrip}) {
+function EditActivityForm({activity, handleUpdateActivity}) {
   const [formData, setFormData] = useState({
     name: activity.name,
     date: activity.date,
@@ -16,7 +16,7 @@ function EditActivityForm({activity, handleUpdateTrip}) {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    handleUpdateTrip(formData)
+    handleUpdateActivity(formData)
   }
 
   return (
@@ -71,7 +71,7 @@ function EditActivityForm({activity, handleUpdateTrip}) {
             value={formData.cost}
             onChange={handleChange}
           />
-          <label htmlFor="activity-budgetCategory">Budget Category</label>
+          {/* <label htmlFor="activity-budgetCategory">Budget Category</label>
           <select
             id="activity-budgetCategory" 
             name="budgetCategory"
@@ -83,7 +83,7 @@ function EditActivityForm({activity, handleUpdateTrip}) {
               <option value="food">Food</option>
               <option value="activities">Activities</option>
               <option value="misc">Misc</option>
-          </select>
+          </select> */}
           <label htmlFor="activity-date">Date</label>
           <input 
             id="activity-date"
