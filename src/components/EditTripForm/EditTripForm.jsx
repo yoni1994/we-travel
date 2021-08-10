@@ -16,7 +16,7 @@ function EditTripForm(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    props.handleEditTrip(formData)
+    props.handleUpdateTrip(formData)
     setFormData({
       name: '',
       date: '',
