@@ -3,24 +3,24 @@ import styles from './ActivityCard.module.css'
 import { Link } from 'react-router-dom'
 
 
-function TripCard(props) {
+function ActivityCard(props) {
     return (
         <>
-        <Link to={`/trips/${props.trip._id}`}>
+        <Link to={`/activitiess/${props.activity._id}`}>
             <div className={styles.container}>
-                <h2>{props.trip.name}</h2>
-                <p>{props.trip.notes}</p>
-                {props.trip.date}
+                <h2>{props.activity.name}</h2>
+                <p>{props.activity.notes}</p>
+                {props.activity.date}
             </div>
         </Link>
         <button 
             type="button"
-            onClick={() => props.handleDeleteTrip(props.trip._id)}
+            onClick={() => props.handleDeleteActivity(props.activity._id)}
         >
-                Delete Trip
+                Delete Activity
         </button>
         </>
     )
 }
 
-export default TripCard;
+export default ActivityCard;
