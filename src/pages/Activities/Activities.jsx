@@ -21,7 +21,7 @@ function Activities(props) {
   const handleDeleteActivity = id => {
     activityService.deleteOne(id)
       .then(
-        setActivities(activities.filter(trip => id !== trip._id))
+        setActivities(activities.filter(activity => id !== activity._id))
       ) 
   }
 
@@ -35,6 +35,16 @@ function Activities(props) {
         <AddActivityForm
           handleAddActivity={handleAddActivity}
         ></AddActivityForm>
+        <p>Hello World! I'm the Activities component.</p> 
+            {activities.map(activity => {
+              return (
+                <ActivityCard
+                  key={activity._id}
+                  activity={activity}
+                  handleDeleteActivity={handleDeleteActivity}
+                /> 
+              )
+            })}
       </div>
   )
 }
