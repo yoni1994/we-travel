@@ -24,6 +24,11 @@ function Activities(props) {
         setActivities(activities.filter(trip => id !== trip._id))
       ) 
   }
+
+  useEffect(() => {
+    activityService.getAll()
+      .then(allActivities => setActivities(allActivities))
+  }, []);
   
   return (
       <div className={styles.container}>
