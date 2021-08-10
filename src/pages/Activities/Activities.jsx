@@ -36,16 +36,17 @@ function Activities(props) {
 //       })
 //   }
   
-  useEffect(() => {
-    activityService.getAll()
-      .then(allActivities => setActivities(allActivities))
-  }, []);
+//   useEffect(() => {
+//     activityService.getAll()
+//       .then(allActivities => setActivities(allActivities))
+//   }, []);
   
   return (
       <div className={styles.container}>
-        <AddActivityForm
+        <h2>activities page</h2>
+        {/* <AddActivityForm
           handleAddActivity={handleAddActivity}
-        ></AddActivityForm>
+        ></AddActivityForm> */}
           {/* <p>Hello World! I'm the Activities component.</p> 
             {activities.map(activity => {
               return (

@@ -27,6 +27,7 @@ function AddActivityForm(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    props.handleAddActivity(formData)
     setFormData({
         name: '',
         location: '',
@@ -41,8 +42,7 @@ function AddActivityForm(props) {
     })
     create(formData)
   }
-  
- 
+
 
   return (
       <div>
