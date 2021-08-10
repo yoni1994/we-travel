@@ -27,7 +27,7 @@ function Trip(props) {
       <h1>{trip.name}</h1>
       <h2>{trip.notes}</h2>
       <h3>{trip.date}</h3>
-      <Link to={'/activites'}>Activites</Link>
+      <Link to={'/checklist'}>Checklists</Link>
     </div>
     
   )
