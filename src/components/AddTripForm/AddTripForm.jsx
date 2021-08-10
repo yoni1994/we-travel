@@ -28,9 +28,13 @@ function AddTripForm(props) {
   }
 
   return (
-      <div>
+      <div className={styles.container}>
         <h2>Add Trip</h2>
-        <form id="add-trip-form" onSubmit={handleSubmit}>
+        <form 
+           id="add-trip-form" 
+           onSubmit={handleSubmit}
+           className={styles.form}
+        >
           <label htmlFor="trip-name">Name</label>
           <input
             id="trip-name" 
