@@ -3,9 +3,9 @@ import * as tokenService from './tokenService'
 export {
     create,
     getAll,
-    getOne,
+    deleteOne,
     update,
-    deleteOne
+    getActivityById,
 }
 
 const BASE_URL = '/api/activities/'
@@ -37,7 +37,7 @@ async function getAll(){
     }
 }
 
-async function getOne(){
+async function deleteOne(){
     try{
 
     }
@@ -45,17 +45,18 @@ async function getOne(){
         throw error
     }
 }
+
 
 async function update(){
     try{
 
     }
     catch (error) {
-        throw error
+        throw error 
     }
 }
 
-async function deleteOne(){
+async function getActivityById(){
     try{
 
     }
