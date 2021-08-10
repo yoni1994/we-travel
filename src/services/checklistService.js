@@ -18,7 +18,7 @@ async function create(checklist){
                 'content-type': 'application/json',
                 'Authorization': `Bearer ${tokenService.getToken()}`
             },
-            body: JSON.stringify(activity)
+            body: JSON.stringify(checklist)
         }, {mode: 'cors'})
         const data = await res.json()
         return data
@@ -64,7 +64,7 @@ async function update(checklist, id){
                 'content-type': 'application/json',
                 'Authorization': `Bearer ${tokenService.getToken()}`
             },
-            body: JSON.stringify(trip)
+            body: JSON.stringify(checklist)
         }, {mode: 'cors'})
         const data = await res.json()
         return data
