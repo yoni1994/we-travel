@@ -4,7 +4,7 @@ import React, {useState} from 'react';
 import styles from './AddActivityForm.module.css'
 
 // Services
-import { create } from '../../services/activityService.js'
+// import { create } from '../../services/activityService.js'
 
 
 function AddActivityForm(props) {
@@ -12,9 +12,9 @@ function AddActivityForm(props) {
     name: '',
     location: '',
     address: '',
-    info: '',
+    notes: '',
     cost: 0,
-    budgetCategory: '',
+    budgetCategory: 'travel',
     date: '',
     // attendees: [],
     // owner: '',
@@ -32,9 +32,9 @@ function AddActivityForm(props) {
         name: '',
         location: '',
         address: '',
-        info: '',
+        notes: '',
         cost: 0,
-        budgetCategory: '',
+        budgetCategory: 'travel',
         date: '',
         // attendees: [],
         // owner: '',
@@ -56,6 +56,7 @@ function AddActivityForm(props) {
             onChange={handleChange}
             autoComplete="off"
             placeholder="activity name"
+            required
           />
           <label htmlFor="activity-location">Location</label>
           <input
@@ -66,6 +67,7 @@ function AddActivityForm(props) {
             onChange={handleChange}
             autoComplete="off"
             placeholder="activity location"
+            required
           />
           <label htmlFor="activity-address">Address</label>
           <input
@@ -76,16 +78,17 @@ function AddActivityForm(props) {
             onChange={handleChange}
             autoComplete="off"
             placeholder="activity address"
+            required
           />
-          <label htmlFor="activity-info">Info</label>
+          <label htmlFor="activity-notes">Notes</label>
           <textarea 
-            id="activity-info"
-            name="info"
-            value={formData.info}
+            id="activity-notes"
+            name="notes"
+            value={formData.notes}
             onChange={handleChange}
             cols="30" 
             rows="10" 
-            placeholder="type activity info here"
+            placeholder="type activity notes here"
           ></textarea>
           <label htmlFor="activity-cost">Cost</label>
           <input
