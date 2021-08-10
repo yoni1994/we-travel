@@ -13,7 +13,7 @@ function TripCard(props) {
                 <p>
                     <button 
                        type="button"
-                       
+                       onClick={() => props.handleDeleteTrip(props.trip._id)}
                     >
                            Delete Trip
                     </button>
