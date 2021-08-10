@@ -7,7 +7,7 @@ import * as checklistService from '../../services/checklistService'
 
 // Components
 import ChecklistCard from '../../components/ChecklistCard/ChecklistCard'
-import AddChecklistForm from '../../components/AddChecklistForm/AddChecklistForm'
+import AddChecklistForm from '../../components/AddChecklistForm/AddChecklistForm';
 
 function Checklists(props) {
   const history = useHistory()
