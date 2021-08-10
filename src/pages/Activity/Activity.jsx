@@ -21,11 +21,16 @@ function Activity(props) {
     return () => { setActivity(null) }
   }, [id])
 
+
   return (
     <div className={styles.container}>
-        <h1>{activity.name}</h1>
-        <h2>{activity.notes}</h2>
-        <h3>{activity.date}</h3>
+        <h1>Name: {activity.name}</h1>
+        <h2>Location: {activity.location}</h2>
+        <h2>Address: {activity.address}</h2>
+        <p> <strong>Notes</strong>: {activity.notes}</p>
+        <h3>Cost: {activity.cost}</h3>
+        {/* <h3>Budget Category: {activity.BudgetCategory}</h3> */}
+        <h3>Date: {activity.date}</h3>
     </div>
     
   )
