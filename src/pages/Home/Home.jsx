@@ -8,11 +8,7 @@ import AddChecklistForm from '../../components/AddChecklistForm/AddChecklistForm
 function Home(props) {
   return (
       <div>
-          <p>Hello World! I'm the Home component.</p> 
-          <AddTripForm/>
-          <Trips/>
-          <AddActivityForm/>
-          <AddChecklistForm />
+          <h2>Current Trips</h2>
       </div>
   )
 }
