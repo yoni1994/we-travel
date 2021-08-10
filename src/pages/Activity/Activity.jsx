@@ -20,7 +20,7 @@ function Activity(props) {
           address: updatedActivity.address,
           notes: updatedActivity.notes,
           cost: updatedActivity.cost,
-          date: updatedActivity.date
+          date: updatedActivity.date.split('T')[0]
       }
       setActivity(newActivityState)
     } catch (error){
@@ -32,7 +32,7 @@ function Activity(props) {
     const fetchActivity = async () => {
         try {
             const activity = await activityService.getActivityById(id)
-            setActivity(activity)
+            setActivity({...activity, date: activity.date.split('T')[0]})
         } catch (error) {
             throw error
         }

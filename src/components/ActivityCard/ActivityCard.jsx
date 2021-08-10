@@ -10,7 +10,7 @@ function ActivityCard(props) {
             <div className={styles.container}>
                 <h2>{props.activity.name}</h2>
                 <p>{props.activity.notes}</p>
-                {props.activity.date}
+                {props.activity.date.split('T')[0]}
             </div>
         </Link>
         <button 
