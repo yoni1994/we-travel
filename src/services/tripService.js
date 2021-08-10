@@ -55,9 +55,10 @@ async function deleteOne(id){
     }
 }
 
-async function update(trip){
+async function update(trip, id){
+    console.log(trip)
     try{
-        const res = await fetch(`${BASE_URL}${trip._id}`, {
+        const res = await fetch(`${BASE_URL}${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',
