@@ -4,7 +4,6 @@ import React, {useState} from 'react';
 import styles from './AddTripForm.module.css'
 
 // Services
-import { create } from '../../services/tripService'
 
 function AddTripForm(props) {
   const [formData, setFormData] = useState({
