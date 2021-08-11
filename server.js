@@ -10,6 +10,7 @@ import { router as authRouter } from './routes/auth.js'
 import { router as tripsRouter } from './routes/trips.js'
 import { router as activitiesRouter } from './routes/activities.js'
 import { router as checklistsRouter } from './routes/checklists.js'
+import { router as inspirationsRouter } from './routes/inspiration.js'
 
 import './config/database.js'
 
