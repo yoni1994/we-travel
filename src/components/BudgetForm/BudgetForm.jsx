@@ -5,14 +5,16 @@ import styles from './BudgetForm.module.css'
 
 // Services
 
-function BudgetForm(props) {
+function BudgetForm({trip, handleAddBudget}) {
+  const {budget} = trip;
+
   const [formData, setFormData] = useState({
-    total: 0,
-    travel: 0,
-    lodging: 0,
-    food: 0,
-    activities: 0,
-    misc: 0,
+    total: budget.total,
+    travel: budget.travel,
+    lodging: budget.lodging,
+    food: budget.food,
+    activities: budget.activities,
+    misc: budget.misc,
   })
   
   const handleChange = (e) => {
@@ -21,7 +23,7 @@ function BudgetForm(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    props.handleAddBudget(formData)
+    handleAddBudget(formData)
     setFormData({
         total: 0,
         travel: 0,
