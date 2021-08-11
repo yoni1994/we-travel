@@ -8,13 +8,15 @@ import styles from './BudgetForm.module.css'
 function BudgetForm({trip, handleAddBudget}) {
   const {budget} = trip;
 
+  // const formatToUSD = new Intl.NumberFormat('en-US', {style: 'currency', currency: 'USD'});
+
   const [formData, setFormData] = useState({
-    total: budget.total,
-    travel: budget.travel,
-    lodging: budget.lodging,
-    food: budget.food,
-    activities: budget.activities,
-    misc: budget.misc,
+    total: budget ? budget.total : 0,
+    travel: budget ? budget.travel : 0,
+    lodging: budget ? budget.lodging : 0,
+    food: budget ? budget.food : 0,
+    activities: budget ? budget.activities : 0,
+    misc: budget ? budget.misc : 0
   })
   
   const handleChange = (e) => {
@@ -24,14 +26,6 @@ function BudgetForm({trip, handleAddBudget}) {
   const handleSubmit = (e) => {
     e.preventDefault()
     handleAddBudget(formData)
-    setFormData({
-        total: 0,
-        travel: 0,
-        lodging: 0,
-        food: 0,
-        activities: 0,
-        misc: 0,
-    })
   }
 
   return (
@@ -47,6 +41,7 @@ function BudgetForm({trip, handleAddBudget}) {
             id="budget-cost" 
             type="number"
             name="total"
+            min={0}
             value={formData.total}
             onChange={handleChange}
           /><label htmlFor="budget-total">Travel</label>
@@ -54,6 +49,7 @@ function BudgetForm({trip, handleAddBudget}) {
             id="budget-travel" 
             type="number"
             name="travel"
+            min={0}
             value={formData.travel}
             onChange={handleChange}
           /><label htmlFor="budget-cost">Lodging</label>
@@ -61,6 +57,7 @@ function BudgetForm({trip, handleAddBudget}) {
             id="budget-lodging" 
             type="number"
             name="lodging"
+            min={0}
             value={formData.lodging}
             onChange={handleChange}
           /><label htmlFor="budget-cost">Food</label>
@@ -68,6 +65,7 @@ function BudgetForm({trip, handleAddBudget}) {
             id="budget-food" 
             type="number"
             name="food"
+            min={0}
             value={formData.food}
             onChange={handleChange}
           /><label htmlFor="budget-cost">Activities</label>
@@ -75,6 +73,7 @@ function BudgetForm({trip, handleAddBudget}) {
             id="budget-activities" 
             type="number"
             name="activities"
+            min={0}
             value={formData.activities}
             onChange={handleChange}
           /><label htmlFor="budget-cost">misc</label>
@@ -82,6 +81,7 @@ function BudgetForm({trip, handleAddBudget}) {
             id="budget-misc" 
             type="number"
             name="misc"
+            min={0}
             value={formData.misc}
             onChange={handleChange}
           />

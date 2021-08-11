@@ -57,7 +57,6 @@ function Trip(props) {
           date: updatedTrip.date
       }
       setTrip(newTripState)
-      console.log(trip)
     } catch (error){
         throw error
     } 
@@ -66,6 +65,7 @@ function Trip(props) {
   const handleAddBudget = async (newBudgetData) => {
     try {
       const updatedTrip = await tripService.update({budget: newBudgetData}, id)
+      console.log(updatedTrip);
       setTrip(updatedTrip)
     }
     catch (error) {
