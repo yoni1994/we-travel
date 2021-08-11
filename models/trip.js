@@ -4,13 +4,13 @@ const Schema = mongoose.Schema
 
 const budgetSchema = Schema({
   // name: {type: String},
-  total: {type: Number},
+  total: {type: Number, default: 0},
   owner: {type: Schema.Types.ObjectId, ref: "Profile"},
-  travel: {type: Number},
-  lodging: {type: Number},
-  food: {type: Number},
-  activities: {type: Number},
-  misc: {type: Number},
+  travel: {type: Number, default: 0},
+  lodging: {type: Number, default: 0},
+  food: {type: Number, default: 0},
+  activities: {type: Number, default: 0},
+  misc: {type: Number, default: 0},
 })
 
 const tripSchema = Schema({
