@@ -1,7 +1,13 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { NavLink } from 'react-router-dom'
 
 const NavBar = ({ user, handleLogout }) => {
+	const [openOrClosed, setOpenOrClosed] = useState(false)
+
+	const handleToggle = () => {
+		setOpenOrClosed(!openOrClosed)
+	}
+
 	return (
 		<nav>
 			<div>
