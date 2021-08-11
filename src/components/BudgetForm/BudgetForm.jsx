@@ -86,7 +86,7 @@ function BudgetForm({trip, handleAddBudget}) {
             onChange={handleChange}
           />
           <button type="submit">
-            Complete Budget
+            Save Budget
           </button>
         </form>
       </div>
