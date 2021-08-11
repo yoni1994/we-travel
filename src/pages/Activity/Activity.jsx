@@ -32,7 +32,7 @@ function Activity(props) {
     const fetchActivity = async () => {
         try {
             const activity = await activityService.getActivityById(id)
-            setActivity({...activity, date: activity.date.split('T')[0]})
+            setActivity({...activity, date: activity.date?.split('T')[0]})
         } catch (error) {
             throw error
         }
