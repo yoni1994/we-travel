@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import * as inspirationCtrl from '../controllers/inspiration.js'
+import * as inspirationCtrl from '../controllers/inspirations.js'
 // import { decodeUserFromToken, checkAuth } from '../middleware/auth.js'
 
 const router = Router()
