@@ -5,7 +5,7 @@ import styles from './AddChecklistForm.module.css'
 function AddChecklistForm(props) {
   const [checklistData, setChecklistData] = useState({
     // owner: '',
-    checklistName: '',
+    name: '',
     items: [''],
   })
 
@@ -18,7 +18,7 @@ function AddChecklistForm(props) {
     props.handleAddChecklist(checklistData)
     setChecklistData({
       // owner: '',
-      checklistName: '',
+      name: '',
       items: [''],
     })
   }
