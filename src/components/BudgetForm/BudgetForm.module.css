@@ -1,0 +1,99 @@
+html {
+    box-sizing: border-box;
+  }
+    
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+  
+  :root {
+    --rock: #563e3a;
+    --geyser: #d7dee6;
+    --shark: #1c1f25;
+    --shadow: #886748;
+    --hoki: #607d9d;
+    --mountbatten-pink: #927b87;
+    --polo-blue: #8daeca;
+    --thatch: #b3a08e;
+    --jelly-bean: #2771a8;
+    --shakespeare: #3597cd;
+  }
+  
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--geyser);
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+form {
+    font-size: 1.4rem;
+}
+
+form * {
+    margin-bottom: 5px;
+}
+
+input {
+    background-color: var(--jelly-bean);
+    border: none;
+    border-bottom: 1px solid var(--thatch);
+    color: var(--geyser);
+    margin-bottom: 20px;
+}
+
+input::placeholder {
+    color: var(--geyser);
+}
+
+textarea {
+    background-color: var(--jelly-bean);
+    resize: none;
+    border: none;
+}
+
+textarea::placeholder {
+    color: var(--geyser);
+}
+
+input:focus, textarea:focus {
+    outline: 1px solid var(--thatch);
+    border: none;
+}
+
+form button {
+    height: 50px;
+    width: 100%;
+    border: none;
+    color: var(--geyser);
+    font-weight: 600;
+    background-color: var(--thatch);
+    border-radius: 50px;
+}
+
+form button:hover {
+    background-color: var(--shakespeare);
+    cursor: pointer;
+}
+
+button {
+    height: 25px;
+    width: 100px;
+    border: none;
+    color: var(--geyser);
+    font-weight: 600;
+    background-color: rgb(138, 43, 8);
+    border-radius: 50px;
+}
+
+button:hover {
+    background-color: orangered;
+    cursor: pointer;
+}

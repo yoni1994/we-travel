@@ -15,6 +15,7 @@ import * as checklistService from '../../services/checklistService'
 import EditTripForm from '../../components/EditTripForm/EditTripForm'
 import Activities from '../Activities/Activities'
 import Checklists from '../Checklists/Checklists'
+import BudgetForm from '../../components/BudgetForm/BudgetForm'
 
 function Trip(props) {
   const { id } = useParams()
@@ -38,9 +39,16 @@ function Trip(props) {
   
   const [showEditTripForm, setShowEditTripForm] = useState(false)
   
-  const handleToggle = () => {
+  const handleEditTripToggle = () => {
     setShowEditTripForm(!showEditTripForm)
   }
+
+  const [showBudgetForm, setShowBudgetForm] = useState(false)
+  
+  const handleBudgetToggle = () => {
+    setShowBudgetForm(!showBudgetForm)
+  }
+
 
   const handleUpdateTrip = async (updatedTripData) => {
     try {
@@ -56,6 +64,16 @@ function Trip(props) {
     } catch (error){
         throw error
     } 
+  }
+
+  const handleAddBudget = async (newBudgetData) => {
+    try {
+      const updatedTrip = await tripService.update({budget: newBudgetData}, id)
+      setTrip(updatedTrip)
+    }
+    catch (error) {
+      throw error
+    }
   }
 
   const handleAddActivity = async (newActivityData) => {
@@ -94,7 +112,7 @@ function Trip(props) {
       <button 
           type="button"
           className={styles.edit}
-          onClick={handleToggle}
+          onClick={handleEditTripToggle}
         >Edit Trip</button>}
       {showEditTripForm && trip.name &&
         <EditTripForm
@@ -108,6 +126,18 @@ function Trip(props) {
         handleAddChecklist={handleAddChecklist}
         handleDeleteChecklist={handleDeleteChecklist}
       />
+      {trip.name &&
+      <button 
+          type="button"
+          className={styles.edit}
+          onClick={handleBudgetToggle}
+        >Set a budget</button>}
+      {showBudgetForm && trip.name &&
+        <BudgetForm
+          trip={trip}
+          handleAddBudget={handleAddBudget}
+        /> 
+      }
       <Activities
         activities={activities}
         handleAddActivity={handleAddActivity}
