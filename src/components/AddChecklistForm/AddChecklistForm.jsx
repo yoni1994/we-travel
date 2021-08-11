@@ -24,7 +24,7 @@ function AddChecklistForm(props) {
   }
 
   return (
-    <div>
+    <div className={styles.container}>
       <h2>Add a Checklist</h2>
     <form id="add-checklist-form" onSubmit={handleSubmit}>
       <label htmlFor="checklist-name">Name</label>
