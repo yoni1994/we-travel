@@ -28,7 +28,7 @@ async function index(req, res){
 
 async function show(req, res){
     try {
-        const trip = await Trip.findById(req.params.id);
+        const trip = await Trip.findById(req.params.id).populate('activities');
         res.status(200).json(trip);
     } catch(error){
         console.error(error);
