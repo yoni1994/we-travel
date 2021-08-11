@@ -4,6 +4,7 @@ import styles from './Activities.module.css'
 
 // Services
 import * as activityService from '../../services/activityService'
+import * as tripService from '../../services/tripService'
 
 // Components
 import ActivityCard from '../../components/ActivityCard/ActivityCard'
@@ -16,6 +17,7 @@ function Activities(props) {
 
   const handleAddActivity = async (newActivityData) => {
     const newActivity = await activityService.create(newActivityData);
+    await tripService.update({$push: {activities: newActivity._id}}, props.tripId)
     setActivities([newActivity, ...activities]);
   }
 
