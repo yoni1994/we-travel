@@ -5,14 +5,18 @@ import styles from './BudgetForm.module.css'
 
 // Services
 
-function BudgetForm(props) {
+function BudgetForm({trip, handleAddBudget}) {
+  const {budget} = trip;
+
+  // const formatToUSD = new Intl.NumberFormat('en-US', {style: 'currency', currency: 'USD'});
+
   const [formData, setFormData] = useState({
-    total: 0,
-    travel: 0,
-    lodging: 0,
-    food: 0,
-    activities: 0,
-    misc: 0,
+    total: budget ? budget.total : 0,
+    travel: budget ? budget.travel : 0,
+    lodging: budget ? budget.lodging : 0,
+    food: budget ? budget.food : 0,
+    activities: budget ? budget.activities : 0,
+    misc: budget ? budget.misc : 0
   })
   
   const handleChange = (e) => {
@@ -21,20 +25,17 @@ function BudgetForm(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    props.handleAddBudget(formData)
-    setFormData({
-        total: 0,
-        travel: 0,
-        lodging: 0,
-        food: 0,
-        activities: 0,
-        misc: 0,
-    })
+    handleAddBudget(formData)
   }
 
   return (
       <div className={styles.container}>
-        <h2>Set Your Budget</h2>
+        {  
+           budget?.total || budget?.travel || budget?.food || budget?.lodging || budget?.activities || budget?.misc ?
+          <h2>Your {trip.name} Budget</h2>
+          :
+          <h2>Set Your Budget</h2>
+        }
         <form 
            id="add-budget-form" 
            onSubmit={handleSubmit}
@@ -45,6 +46,7 @@ function BudgetForm(props) {
             id="budget-cost" 
             type="number"
             name="total"
+            min={0}
             value={formData.total}
             onChange={handleChange}
           /><label htmlFor="budget-total">Travel</label>
@@ -52,6 +54,7 @@ function BudgetForm(props) {
             id="budget-travel" 
             type="number"
             name="travel"
+            min={0}
             value={formData.travel}
             onChange={handleChange}
           /><label htmlFor="budget-cost">Lodging</label>
@@ -59,6 +62,7 @@ function BudgetForm(props) {
             id="budget-lodging" 
             type="number"
             name="lodging"
+            min={0}
             value={formData.lodging}
             onChange={handleChange}
           /><label htmlFor="budget-cost">Food</label>
@@ -66,6 +70,7 @@ function BudgetForm(props) {
             id="budget-food" 
             type="number"
             name="food"
+            min={0}
             value={formData.food}
             onChange={handleChange}
           /><label htmlFor="budget-cost">Activities</label>
@@ -73,6 +78,7 @@ function BudgetForm(props) {
             id="budget-activities" 
             type="number"
             name="activities"
+            min={0}
             value={formData.activities}
             onChange={handleChange}
           /><label htmlFor="budget-cost">misc</label>
@@ -80,11 +86,12 @@ function BudgetForm(props) {
             id="budget-misc" 
             type="number"
             name="misc"
+            min={0}
             value={formData.misc}
             onChange={handleChange}
           />
           <button type="submit">
-            Complete Budget
+            Save Budget
           </button>
         </form>
       </div>

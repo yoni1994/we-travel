@@ -1,4 +1,4 @@
-gitimport React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useParams } from 'react-router-dom'
 import dateFormat from 'dateformat'
@@ -60,7 +60,6 @@ function Trip(props) {
           date: updatedTrip.date
       }
       setTrip(newTripState)
-      console.log(trip)
     } catch (error){
         throw error
     } 
@@ -69,6 +68,7 @@ function Trip(props) {
   const handleAddBudget = async (newBudgetData) => {
     try {
       const updatedTrip = await tripService.update({budget: newBudgetData}, id)
+      console.log(updatedTrip);
       setTrip(updatedTrip)
     }
     catch (error) {
@@ -108,6 +108,7 @@ function Trip(props) {
       <h2>{trip.notes}</h2>
       <h3>{dateFormat(trip.date, "mediumDate", true)}</h3>
       {/* <button type="button">Edit Trip</button> */}
+      <Link to={'/checklists'}>Checklists</Link>
       {trip.name &&
       <button 
           type="button"
@@ -131,7 +132,11 @@ function Trip(props) {
           type="button"
           className={styles.edit}
           onClick={handleBudgetToggle}
-        >Set a budget</button>}
+        >
+          {
+            trip.budget?.total || trip.budget?.travel || trip.budget?.food || trip.budget?.lodging || trip.budget?.activities || trip.budget?.misc
+            ? 'Edit Budget' : 'Set a Budget'}
+        </button>}
       {showBudgetForm && trip.name &&
         <BudgetForm
           trip={trip}
