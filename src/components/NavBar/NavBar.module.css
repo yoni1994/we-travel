@@ -1,0 +1,52 @@
+html {
+    box-sizing: border-box;
+  }
+    
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+  
+  :root {
+    --rock: #563e3a;
+    --geyser: #d7dee6;
+    --shark: #1c1f25;
+    --shadow: #886748;
+    --hoki: #607d9d;
+    --mountbatten-pink: #927b87;
+    --polo-blue: #8daeca;
+    --thatch: #b3a08e;
+    --jelly-bean: #2771a8;
+    --shakespeare: #3597cd;
+  }
+
+  nav {
+      background-color: var(--polo-blue);
+  }
+
+  .navDark {
+      display: flex;
+      flex-direction: column;
+      margin-top: 10px;
+      margin-left: 10px;
+      padding-bottom: 10px;
+  }
+
+  a {
+      padding-bottom: 10px;
+  }
+
+  .toggle {
+      margin: 10px;
+      font-size: 1.4rem;
+  }
+
+  .toggle:hover {
+      cursor: pointer;
+      color: var(--geyser);
+  }
+
+  a:hover {
+      color: var(--geyser);
+  }

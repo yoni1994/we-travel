@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
 import { NavLink } from 'react-router-dom'
 
+import styles from './NavBar.module.css'
+
 const NavBar = ({ user, handleLogout }) => {
 	const [openOrClosed, setOpenOrClosed] = useState(false)
 
@@ -12,41 +14,24 @@ const NavBar = ({ user, handleLogout }) => {
 		<nav>
 			<i 
 			  onClick={handleToggle}
-			  class="fas fa-bars">
+			  className={`fas fa-bars ${styles.toggle}`}>
 		    </i>
 			{openOrClosed &&
-				<div>
+				<div className={styles.navDark}>
 				{user ? (
-					<ul>
-						<li>Welcome, {user.name}</li>
-						<li>
-							<NavLink to='' onClick={handleLogout}>Log out</NavLink>
-						</li>
-						<li>
-							<NavLink to="/users">Users</NavLink>
-						</li>
-						<li>
-							<NavLink to="/home">Home</NavLink>
-						</li>
-						<li>
-							<NavLink to="/trips">Trips</NavLink>
-						</li>
-						<li>
-							<NavLink to="/inspiration">Inspiration</NavLink>
-						</li>
-					</ul>
+					<>
+					<NavLink to="/users">Users</NavLink>
+					<NavLink to="/home">Home</NavLink>
+					<NavLink to="/trips">Trips</NavLink>
+					<NavLink to="/inspiration">Inspiration</NavLink>
+					<NavLink to='' onClick={handleLogout}>Log out</NavLink>
+					</>
 				) : (
-					<ul>
-						<li>
-							<NavLink to="/login">Log In</NavLink>
-						</li>
-						<li>
-							<NavLink to="/users">Users</NavLink>
-						</li>
-						<li>
-							<NavLink to="/signup">Sign Up</NavLink>
-						</li>
-					</ul>
+					<>	
+					<NavLink to="/login">Log In</NavLink>
+					<NavLink to="/users">Users</NavLink>
+					<NavLink to="/signup">Sign Up</NavLink>
+					</>
 				)}
 				</div>
             }
