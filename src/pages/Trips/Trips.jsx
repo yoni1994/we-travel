@@ -12,6 +12,7 @@ import AddTripForm from '../../components/AddTripForm/AddTripForm'
 function Trips(props) {
   const history = useHistory()
   const [trips, setTrips] = useState([])
+  const [showAddTripForm, setShowAddTripForm] = useState(false)
   
   const handleAddTrip = async (newTripData) => {
     const newTrip = await tripService.create(newTripData);
@@ -29,22 +30,32 @@ function Trips(props) {
     tripService.getAll()
       .then(allTrips => setTrips(allTrips))
   }, []);
+
+  const handleToggle = () => {
+    setShowAddTripForm(!showAddTripForm)
+  }
   
   return (
       <div className={styles.container}>
-        <AddTripForm
-          handleAddTrip={handleAddTrip}
-        ></AddTripForm>
-          <p>Hello World! I'm the Trips component.</p> 
-            {trips.map(trip => {
-              return (
-                <TripCard
-                  key={trip._id}
-                  trip={trip}
-                  handleDeleteTrip={handleDeleteTrip}
-                /> 
-              )
-            })}
+        <button 
+          type="button"
+          className={styles.plan}
+          onClick={handleToggle}
+        >Plan a Trip</button>
+        {showAddTripForm && 
+          <AddTripForm
+            handleAddTrip={handleAddTrip}
+          ></AddTripForm>
+        }
+        {trips.map(trip => {
+          return (
+            <TripCard
+              key={trip._id}
+              trip={trip}
+              handleDeleteTrip={handleDeleteTrip}
+            /> 
+          )
+        })}
       </div>
   )
 }
