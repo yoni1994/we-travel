@@ -20,9 +20,14 @@ function EditTripForm({trip, handleUpdateTrip}) {
   }
 
   return (
-      <div>
+      <div className={styles.container}>
         <h2>Edit Trip</h2>
-        <form id="Edit-trip-form" onSubmit={handleSubmit}>
+        <form 
+          id="Edit-trip-form" 
+          onSubmit={handleSubmit}
+          className={styles.form}
+          >
+          
           <label htmlFor="trip-name">Name</label>
           <input
             id="trip-name" 
