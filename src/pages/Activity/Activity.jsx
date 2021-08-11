@@ -58,7 +58,7 @@ function Activity(props) {
         <h3>Date: {activity.date}</h3>
         <button 
           type="button"
-          className={styles.plan}
+          className={styles.edit}
           onClick={handleToggle}
         >Edit Activity</button>
         {showEditActivityForm && activity.name && activity.location &&
