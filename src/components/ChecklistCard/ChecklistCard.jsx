@@ -12,6 +12,13 @@ function ChecklistCard(props) {
               <p>{props.checklist.items}</p>
           </div>
       </Link>
+      <button
+            className={styles.delete} 
+            type="button"
+            onClick={() => props.handleDeleteChecklist(props.checklist._id)}
+        >
+                Delete
+        </button>
       </>
   )
 }

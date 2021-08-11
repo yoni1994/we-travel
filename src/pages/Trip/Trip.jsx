@@ -9,10 +9,12 @@ import styles from './Trip.module.css'
 // Services
 import * as tripService from '../../services/tripService'
 import * as activityService from '../../services/activityService'
+import * as checklistService from '../../services/checklistService'
 
 // Components
 import EditTripForm from '../../components/EditTripForm/EditTripForm'
 import Activities from '../Activities/Activities'
+import Checklists from '../Checklists/Checklists'
 import BudgetForm from '../../components/BudgetForm/BudgetForm'
 
 function Trip(props) {
@@ -20,6 +22,7 @@ function Trip(props) {
   
   const [trip, setTrip] = useState({})
   const [activities, setActivities] = useState([])
+  const [checklists, setChecklists] = useState([])
   useEffect(() => {
     const fetchTrip = async () => {
         try {
@@ -86,11 +89,25 @@ function Trip(props) {
       ) 
   }
 
+  const handleAddChecklist = async (newChecklistData) => {
+    const newChecklist = await checklistService.create(newChecklistData);
+    await tripService.update({$push: {checklists: newChecklist._id}}, id)
+    setChecklists([newChecklist, ...checklists]);
+  }
+
+  const handleDeleteChecklist = id => {
+    checklistService.deleteOne(id)
+      .then(
+        setChecklists(checklists.filter(checklist => id !== checklist._id))
+      ) 
+  }  
+
   return (
     <div className={styles.container}>
       <h1>{trip.name}</h1>
       <h2>{trip.notes}</h2>
       <h3>{dateFormat(trip.date, "mediumDate", true)}</h3>
+      {/* <button type="button">Edit Trip</button> */}
       <Link to={'/checklists'}>Checklists</Link>
       {trip.name &&
       <button 
@@ -104,6 +121,12 @@ function Trip(props) {
           handleUpdateTrip={handleUpdateTrip}
         /> 
       }
+      <Checklists
+        className={styles.checklist}
+        checklists={checklists}
+        handleAddChecklist={handleAddChecklist}
+        handleDeleteChecklist={handleDeleteChecklist}
+      />
       {trip.name &&
       <button 
           type="button"

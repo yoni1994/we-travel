@@ -24,18 +24,18 @@ function AddChecklistForm(props) {
   }
 
   return (
-    <div>
+    <div className={styles.container}>
       <h2>Add a Checklist</h2>
     <form id="add-checklist-form" onSubmit={handleSubmit}>
       <label htmlFor="checklist-name">Name</label>
       <input 
       id="checklist-name"
       type="text"
-      name="checklistName"
+      name="name"
       value={checklistData.name}
       onChange={handleChange}
       autoComplete="off"
-      placeholder="Checklist name"
+      placeholder="checklist name"
       />
       <label htmlFor="checklist-items">Items</label>
       <input 
