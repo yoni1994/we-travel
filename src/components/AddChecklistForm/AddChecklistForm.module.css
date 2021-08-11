@@ -25,6 +25,7 @@ html {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background-color: #2771a8;
   align-items: center;
   color: var(--geyser);
   width: 100%;
@@ -33,7 +34,7 @@ html {
 }
 
 h2 {
-  color: #2771a8;
+  color: #d7dee6;
 }
 
 form {
