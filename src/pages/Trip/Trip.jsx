@@ -75,7 +75,7 @@ function Trip(props) {
       <h3>{trip.date}</h3>
       <button 
           type="button"
-          className={styles.plan}
+          className={styles.edit}
           onClick={handleToggle}
         >Edit Trip</button>
       {showEditTripForm && trip.name &&
