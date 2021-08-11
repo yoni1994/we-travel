@@ -111,7 +111,7 @@ function Trip(props) {
           onClick={handleBudgetToggle}
         >
           {
-            trip.budget.total || trip.budget.travel || trip.budget.food || trip.budget.lodging || trip.budget.activities || trip.budget.misc
+            trip.budget?.total || trip.budget?.travel || trip.budget?.food || trip.budget?.lodging || trip.budget?.activities || trip.budget?.misc
             ? 'Edit Budget' : 'Set a Budget'}
         </button>}
       {showBudgetForm && trip.name &&

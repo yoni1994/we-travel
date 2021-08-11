@@ -31,7 +31,7 @@ function BudgetForm({trip, handleAddBudget}) {
   return (
       <div className={styles.container}>
         {  
-           budget.total || budget.travel || budget.food || budget.lodging || budget.activities || budget.misc ?
+           budget?.total || budget?.travel || budget?.food || budget?.lodging || budget?.activities || budget?.misc ?
           <h2>Your {trip.name} Budget</h2>
           :
           <h2>Set Your Budget</h2>
