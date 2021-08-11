@@ -8,6 +8,7 @@ import EditTripForm from '../../components/EditTripForm/EditTripForm'
 function Trip(props) {
   const { id } = useParams()
   const [trip, setTrip] = useState({})
+  const [showEditTripForm, setShowEditTripForm] = useState(false)
 
   const handleUpdateTrip = async (updatedTripData) => {
     try {
@@ -39,6 +40,10 @@ function Trip(props) {
     return () => { setTrip(null) }
 }, [id])
 
+    const handleToggle = () => {
+      setShowEditTripForm(!showEditTripForm)
+    }
+
   return (
     <div className={styles.container}>
       <h1>{trip.name}</h1>
@@ -46,8 +51,12 @@ function Trip(props) {
       <h3>{trip.date}</h3>
       <Link to={'/activities'}>Activities</Link>
       <Link to={'/checklist'}>Checklists</Link>
-      {/* <button type="button">Edit Trip</button> */}
-      {trip.name &&
+      <button 
+          type="button"
+          className={styles.plan}
+          onClick={handleToggle}
+        >Edit Trip</button>
+      {showEditTripForm && trip.name &&
         <EditTripForm
           trip={trip}
           handleUpdateTrip={handleUpdateTrip}
