@@ -30,7 +30,12 @@ function BudgetForm({trip, handleAddBudget}) {
 
   return (
       <div className={styles.container}>
-        <h2>Set Your Budget</h2>
+        {
+          budget.total ?
+          <h2>Your {trip.name} Budget</h2>
+          :
+          <h2>Set Your Budget</h2>
+        }
         <form 
            id="add-budget-form" 
            onSubmit={handleSubmit}
