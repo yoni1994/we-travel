@@ -1,38 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom'
 import styles from './Activities.module.css'
-
-// Services
-import * as activityService from '../../services/activityService'
-import * as tripService from '../../services/tripService'
 
 // Components
 import ActivityCard from '../../components/ActivityCard/ActivityCard'
 import AddActivityForm from '../../components/AddActivityForm/AddActivityForm'
 
-function Activities(props) {
-  const history = useHistory()
-  const [activities, setActivities] = useState([])
+function Activities(props){
+  const {activities, handleAddActivity, handleDeleteActivity} = props
   const [showAddActivityForm, setShowAddActivityForm] = useState(false)
-
-  const handleAddActivity = async (newActivityData) => {
-    const newActivity = await activityService.create(newActivityData);
-    await tripService.update({$push: {activities: newActivity._id}}, props.tripId)
-    setActivities([newActivity, ...activities]);
-  }
-
-  const handleDeleteActivity = id => {
-    activityService.deleteOne(id)
-      .then(
-        setActivities(activities.filter(activity => id !== activity._id))
-      ) 
-  }
-
-  useEffect(() => {
-    activityService.getAll()
-      .then(allActivities => setActivities(allActivities))
-  }, []);
-
   const handleToggle = () => {
     setShowAddActivityForm(!showAddActivityForm)
   }
@@ -49,16 +24,15 @@ function Activities(props) {
             handleAddActivity={handleAddActivity}
           ></AddActivityForm>
         }
-        <p>Here are all your activities!</p> 
-            {activities.map(activity => {
-              return (
-                <ActivityCard
-                  key={activity._id}
-                  activity={activity}
-                  handleDeleteActivity={handleDeleteActivity}
-                /> 
-              )
-            })}
+        {activities?.map((activity, i) => {
+          return (
+            <ActivityCard
+              key={i}
+              activity={activity}
+              handleDeleteActivity={handleDeleteActivity}
+            /> 
+          )
+        })}
       </div>
   )
 }
