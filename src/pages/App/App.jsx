@@ -69,7 +69,7 @@ const App = () => {
 			<Route exact path='/inspiration'>
 				{user ? <Inspiration user={user} /> : <Redirect to='/login'/>}
 			</Route>
-			<Route exact path='/checklist'>
+			<Route exact path='/checklists'>
 				{user ? <Checklists user={user} /> : <Redirect to='/login'/>}
 			</Route>
 		

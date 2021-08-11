@@ -5,12 +5,12 @@ import styles from './AddChecklistForm.module.css'
 function AddChecklistForm(props) {
   const [checklistData, setChecklistData] = useState({
     // owner: '',
-    name: '',
+    checklistName: '',
     items: [''],
   })
 
   const handleChange = (e) => {
-    setChecklistData({...checklistData, [e.target.name]: e.target.value})
+    setChecklistData({...checklistData, [e.target.checklistName]: e.target.value})
   }
 
   const handleSubmit = (e) => {
@@ -18,7 +18,7 @@ function AddChecklistForm(props) {
     props.handleAddChecklist(checklistData)
     setChecklistData({
       // owner: '',
-      name: '',
+      checklistName: '',
       items: [''],
     })
   }
@@ -31,8 +31,8 @@ function AddChecklistForm(props) {
       <input 
       id="checklist-name"
       type="text"
-      name="name"
-      value={checklistData.name}
+      name="checklistName"
+      value={checklistData.checklistName}
       onChange={handleChange}
       autoComplete="off"
       placeholder="Checklist name"

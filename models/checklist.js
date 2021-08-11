@@ -4,7 +4,7 @@ const Schema = mongoose.Schema
 
 const checklistSchema = new mongoose.Schema({
     owner: {type: Schema.Types.ObjectId, ref: "Profile"},
-    name: {type: String},
+    checklistName: {type: String},
     items: {type: [String]},
 }, {
     timestamps: true
