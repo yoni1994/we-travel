@@ -11,7 +11,7 @@ function TripCard(props) {
             <div className={styles.container}>
                 <h2>{props.trip.name}</h2>
                 <p>{props.trip.notes}</p>
-                {props.trip.date.split('T')[0]}
+                {props.trip.date?.split('T')[0]}
             </div>
         </Link>
         <button 

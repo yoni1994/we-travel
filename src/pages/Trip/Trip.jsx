@@ -23,7 +23,7 @@ function Trip(props) {
         try {
             const trip = await tripService.getTripById(id)
             
-            setTrip({...trip, date: trip.date.split('T')[0]})
+            setTrip({...trip, date: trip.date?.split('T')[0]})
             setActivities(trip.activities)
         } catch (error) {
             throw error
@@ -46,7 +46,7 @@ function Trip(props) {
           ...trip, 
           name: updatedTrip.name, 
           notes: updatedTrip.notes, 
-          date: updatedTrip.date.split('T')[0]
+          date: updatedTrip.date?.split('T')[0]
       }
       setTrip(newTripState)
       console.log(trip)
