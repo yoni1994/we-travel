@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useParams } from 'react-router-dom'
+import dateFormat from 'dateformat'
 
 // Styles
 import styles from './Trip.module.css'
@@ -23,8 +24,7 @@ function Trip(props) {
     const fetchTrip = async () => {
         try {
             const trip = await tripService.getTripById(id)
-            
-            setTrip({...trip, date: trip.date?.split('T')[0]})
+            setTrip(trip)
             setActivities(trip.activities)
         } catch (error) {
             throw error
@@ -54,7 +54,7 @@ function Trip(props) {
           ...trip, 
           name: updatedTrip.name, 
           notes: updatedTrip.notes, 
-          date: updatedTrip.date?.split('T')[0]
+          date: updatedTrip.date
       }
       setTrip(newTripState)
       console.log(trip)
@@ -80,7 +80,7 @@ function Trip(props) {
     <div className={styles.container}>
       <h1>{trip.name}</h1>
       <h2>{trip.notes}</h2>
-      <h3>{trip.date}</h3>
+      <h3>{dateFormat(trip.date, "mediumDate", true)}</h3>
       <Link to={'/checklists'}>Checklists</Link>
       {/* <button type="button">Edit Trip</button> */}
       {trip.name &&
