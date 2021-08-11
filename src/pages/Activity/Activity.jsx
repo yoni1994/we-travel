@@ -41,6 +41,11 @@ function Activity(props) {
     return () => { setActivity(null) }
   }, [id])
 
+  const [showEditActivityForm, setShowEditActivityForm] = useState(false)
+  const handleToggle = () => {
+    setShowEditActivityForm(!showEditActivityForm)
+  }
+
 
   return (
     <div className={styles.container}>
@@ -51,12 +56,18 @@ function Activity(props) {
         <h3>Cost: {activity.cost}</h3>
         {/* <h3>Budget Category: {activity.BudgetCategory}</h3> */}
         <h3>Date: {activity.date}</h3>
-        {activity.name && activity.location &&
+        <button 
+          type="button"
+          className={styles.plan}
+          onClick={handleToggle}
+        >Edit Activity</button>
+        {showEditActivityForm && activity.name && activity.location &&
             <EditActivityForm
             activity={activity}
             handleUpdateActivity={handleUpdateActivity}
             />
         }
+        
     </div>
     
   )
