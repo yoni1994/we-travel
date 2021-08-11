@@ -63,6 +63,16 @@ function Trip(props) {
     } 
   }
 
+  const handleAddBudget = async (newBudgetData) => {
+    try {
+      const updatedTrip = await tripService.update(newBudgetData, id)
+      setTrip(updatedTrip)
+    }
+    catch (error) {
+      throw error
+    }
+  }
+
   const handleAddActivity = async (newActivityData) => {
     const newActivity = await activityService.create(newActivityData);
     await tripService.update({$push: {activities: newActivity._id}}, id)
@@ -104,6 +114,7 @@ function Trip(props) {
       {showBudgetForm && trip.name &&
         <BudgetForm
           trip={trip}
+          handleAddBudget={handleAddBudget}
         /> 
       }
       <Activities

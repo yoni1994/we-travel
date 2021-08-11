@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 
 // Styles
-import styles from './AddBudgetForm.module.css'
+import styles from './BudgetForm.module.css'
 
 // Services
 
