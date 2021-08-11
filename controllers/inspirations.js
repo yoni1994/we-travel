@@ -13,7 +13,15 @@ const serverApi = createApi({
 
 
 async function index(req, res){
-    
+    try {
+        const response = await fetch(`${BASE_URL}${RANDOM}`, {
+  
+        })
+        const data = await response.json()
+        return data
+     } catch(error){
+         throw error
+     }
 }
 
 export {
