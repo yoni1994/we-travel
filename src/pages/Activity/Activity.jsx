@@ -20,7 +20,7 @@ function Activity(props) {
           address: updatedActivity.address,
           notes: updatedActivity.notes,
           cost: updatedActivity.cost,
-          date: updatedActivity.date.split('T')[0]
+          date: updatedActivity.date?.split('T')[0]
       }
       setActivity(newActivityState)
     } catch (error){
