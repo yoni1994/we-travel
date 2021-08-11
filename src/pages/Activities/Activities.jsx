@@ -12,6 +12,7 @@ import AddActivityForm from '../../components/AddActivityForm/AddActivityForm'
 function Activities(props) {
   const history = useHistory()
   const [activities, setActivities] = useState([])
+  const [showAddActivityForm, setShowAddActivityForm] = useState(false)
   
   const handleAddActivity = async (newActivityData) => {
     const newActivity = await activityService.create(newActivityData);
