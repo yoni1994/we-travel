@@ -5,7 +5,7 @@ import styles from './AddBudgetForm.module.css'
 
 // Services
 
-function AddBudgetForm(props) {
+function BudgetForm(props) {
   const [formData, setFormData] = useState({
     total: 0,
     travel: 0,
@@ -91,4 +91,4 @@ function AddBudgetForm(props) {
   )
 }
 
-export default AddBudgetForm
+export default BudgetForm
