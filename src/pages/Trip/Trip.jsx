@@ -4,6 +4,7 @@ import styles from './Trip.module.css'
 import * as tripService from '../../services/tripService'
 import { useParams } from 'react-router-dom'
 import EditTripForm from '../../components/EditTripForm/EditTripForm'
+import Activities from '../Activities/Activities'
 
 function Trip(props) {
   const { id } = useParams()
@@ -49,8 +50,11 @@ function Trip(props) {
       <h1>{trip.name}</h1>
       <h2>{trip.notes}</h2>
       <h3>{trip.date}</h3>
-      <Link to={'/activities'}>Activities</Link>
-      <Link to={'/checklist'}>Checklists</Link>
+      <Activities
+        tripId={id}
+      />
+      {/* <Link to={'/activities'}>Activities</Link>
+      <Link to={'/checklist'}>Checklists</Link> */}
       <button 
           type="button"
           className={styles.plan}
