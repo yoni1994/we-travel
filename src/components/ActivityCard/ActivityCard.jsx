@@ -10,14 +10,15 @@ function ActivityCard(props) {
             <div className={styles.container}>
                 <h2>{props.activity.name}</h2>
                 <p>{props.activity.notes}</p>
-                {props.activity.date.split('T')[0]}
+                {props.activity.date?.split('T')[0]}
             </div>
         </Link>
-        <button 
+        <button
+            className={styles.delete} 
             type="button"
             onClick={() => props.handleDeleteActivity(props.activity._id)}
         >
-                Delete Activity
+                Delete
         </button>
         </>
     )

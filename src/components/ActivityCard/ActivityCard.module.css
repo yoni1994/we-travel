@@ -20,3 +20,7 @@ html {
 .container:hover {
     background-color: lightblue;
 }
+
+.delete {
+  margin-bottom: 5px;
+}

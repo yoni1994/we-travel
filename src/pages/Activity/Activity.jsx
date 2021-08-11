@@ -32,7 +32,7 @@ function Activity(props) {
     const fetchActivity = async () => {
         try {
             const activity = await activityService.getActivityById(id)
-            setActivity({...activity, date: activity.date.split('T')[0]})
+            setActivity({...activity, date: activity.date?.split('T')[0]})
         } catch (error) {
             throw error
         }
@@ -40,6 +40,11 @@ function Activity(props) {
     fetchActivity()
     return () => { setActivity(null) }
   }, [id])
+
+  const [showEditActivityForm, setShowEditActivityForm] = useState(false)
+  const handleToggle = () => {
+    setShowEditActivityForm(!showEditActivityForm)
+  }
 
 
   return (
@@ -51,12 +56,18 @@ function Activity(props) {
         <h3>Cost: {activity.cost}</h3>
         {/* <h3>Budget Category: {activity.BudgetCategory}</h3> */}
         <h3>Date: {activity.date}</h3>
-        {activity.name && activity.location &&
+        <button 
+          type="button"
+          className={styles.edit}
+          onClick={handleToggle}
+        >Edit Activity</button>
+        {showEditActivityForm && activity.name && activity.location &&
             <EditActivityForm
             activity={activity}
             handleUpdateActivity={handleUpdateActivity}
             />
         }
+        
     </div>
     
   )
