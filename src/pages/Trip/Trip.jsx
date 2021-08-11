@@ -65,7 +65,7 @@ function Trip(props) {
 
   const handleAddBudget = async (newBudgetData) => {
     try {
-      const updatedTrip = await tripService.update(newBudgetData, id)
+      const updatedTrip = await tripService.update({budget: newBudgetData}, id)
       setTrip(updatedTrip)
     }
     catch (error) {

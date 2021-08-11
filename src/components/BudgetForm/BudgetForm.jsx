@@ -16,7 +16,7 @@ function BudgetForm(props) {
   })
   
   const handleChange = (e) => {
-    setFormData({...formData, [e.target.name]: e.target.value})
+    setFormData({...formData, [e.target.name]: parseInt(e.target.value)})
   }
 
   const handleSubmit = (e) => {
