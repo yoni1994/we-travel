@@ -10,7 +10,7 @@ function AddChecklistForm(props) {
   })
 
   const handleChange = (e) => {
-    setChecklistData({...checklistData, [e.target.checklistName]: e.target.value})
+    setChecklistData({...checklistData, [e.target.name]: e.target.value})
   }
 
   const handleSubmit = (e) => {
@@ -32,7 +32,7 @@ function AddChecklistForm(props) {
       id="checklist-name"
       type="text"
       name="checklistName"
-      value={checklistData.checklistName}
+      value={checklistData.name}
       onChange={handleChange}
       autoComplete="off"
       placeholder="Checklist name"
