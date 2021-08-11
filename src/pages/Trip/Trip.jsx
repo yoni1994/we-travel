@@ -73,11 +73,14 @@ function Trip(props) {
       <h1>{trip.name}</h1>
       <h2>{trip.notes}</h2>
       <h3>{trip.date}</h3>
+      <Link to={'/checklists'}>Checklists</Link>
+      {/* <button type="button">Edit Trip</button> */}
+      {trip.name &&
       <button 
           type="button"
           className={styles.edit}
           onClick={handleToggle}
-        >Edit Trip</button>
+        >Edit Trip</button>}
       {showEditTripForm && trip.name &&
         <EditTripForm
           trip={trip}
