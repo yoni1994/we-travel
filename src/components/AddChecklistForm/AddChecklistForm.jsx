@@ -31,11 +31,11 @@ function AddChecklistForm(props) {
       <input 
       id="checklist-name"
       type="text"
-      name="checklistName"
+      name="name"
       value={checklistData.name}
       onChange={handleChange}
       autoComplete="off"
-      placeholder="Checklist name"
+      placeholder="checklist name"
       />
       <label htmlFor="checklist-items">Items</label>
       <input 
