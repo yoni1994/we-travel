@@ -2,6 +2,8 @@ import React from 'react';
 import styles from './TripCard.module.css'
 import { Link } from 'react-router-dom'
 
+import dateFormat from 'dateformat'
+
 
 function TripCard(props) {
     
@@ -11,7 +13,7 @@ function TripCard(props) {
             <div className={styles.container}>
                 <h2>{props.trip.name}</h2>
                 <p>{props.trip.notes}</p>
-                {props.trip.date?.split('T')[0]}
+                {dateFormat(props.trip.date, "mediumDate", true)}
             </div>
         </Link>
         <button 
