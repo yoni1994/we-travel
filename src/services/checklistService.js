@@ -8,7 +8,7 @@ export {
     getChecklistById,
 }
 
-const BASE_URL = '/api/activities/'
+const BASE_URL = '/api/checklists/'
 
 async function create(checklist){
     try {

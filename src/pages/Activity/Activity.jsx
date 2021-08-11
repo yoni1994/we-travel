@@ -5,6 +5,7 @@ import * as activityService from '../../services/activityService'
 import { useParams } from 'react-router-dom'
 import EditActivityForm from '../../components/EditActivityForm/EditActivityForm';
 import Trip from '../Trip/Trip';
+import dateFormat from 'dateformat'
 
 function Activity(props) {
   const { id } = useParams()
@@ -20,7 +21,7 @@ function Activity(props) {
           address: updatedActivity.address,
           notes: updatedActivity.notes,
           cost: updatedActivity.cost,
-          date: updatedActivity.date.split('T')[0]
+          date: updatedActivity.date
       }
       setActivity(newActivityState)
     } catch (error){
@@ -32,7 +33,7 @@ function Activity(props) {
     const fetchActivity = async () => {
         try {
             const activity = await activityService.getActivityById(id)
-            setActivity({...activity, date: activity.date?.split('T')[0]})
+            setActivity({...activity, date: activity.date})
         } catch (error) {
             throw error
         }
@@ -55,7 +56,7 @@ function Activity(props) {
         <p> <strong>Notes</strong>: {activity.notes}</p>
         <h3>Cost: {activity.cost}</h3>
         {/* <h3>Budget Category: {activity.BudgetCategory}</h3> */}
-        <h3>Date: {activity.date}</h3>
+        <h3>Date: {dateFormat(activity.date, "mediumDate", true)}</h3>
         <button 
           type="button"
           className={styles.edit}

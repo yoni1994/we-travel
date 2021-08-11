@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useParams } from 'react-router-dom'
+import dateFormat from 'dateformat'
 
 // Styles
 import styles from './Trip.module.css'
@@ -12,6 +13,7 @@ import * as activityService from '../../services/activityService'
 // Components
 import EditTripForm from '../../components/EditTripForm/EditTripForm'
 import Activities from '../Activities/Activities'
+import BudgetForm from '../../components/BudgetForm/BudgetForm'
 
 function Trip(props) {
   const { id } = useParams()
@@ -22,8 +24,7 @@ function Trip(props) {
     const fetchTrip = async () => {
         try {
             const trip = await tripService.getTripById(id)
-            
-            setTrip({...trip, date: trip.date.split('T')[0]})
+            setTrip(trip)
             setActivities(trip.activities)
         } catch (error) {
             throw error
@@ -35,9 +36,16 @@ function Trip(props) {
   
   const [showEditTripForm, setShowEditTripForm] = useState(false)
   
-  const handleToggle = () => {
+  const handleEditTripToggle = () => {
     setShowEditTripForm(!showEditTripForm)
   }
+
+  const [showBudgetForm, setShowBudgetForm] = useState(false)
+  
+  const handleBudgetToggle = () => {
+    setShowBudgetForm(!showBudgetForm)
+  }
+
 
   const handleUpdateTrip = async (updatedTripData) => {
     try {
@@ -46,13 +54,23 @@ function Trip(props) {
           ...trip, 
           name: updatedTrip.name, 
           notes: updatedTrip.notes, 
-          date: updatedTrip.date.split('T')[0]
+          date: updatedTrip.date
       }
       setTrip(newTripState)
-      console.log(trip)
     } catch (error){
         throw error
     } 
+  }
+
+  const handleAddBudget = async (newBudgetData) => {
+    try {
+      const updatedTrip = await tripService.update({budget: newBudgetData}, id)
+      console.log(updatedTrip);
+      setTrip(updatedTrip)
+    }
+    catch (error) {
+      throw error
+    }
   }
 
   const handleAddActivity = async (newActivityData) => {
@@ -72,16 +90,34 @@ function Trip(props) {
     <div className={styles.container}>
       <h1>{trip.name}</h1>
       <h2>{trip.notes}</h2>
-      <h3>{trip.date}</h3>
+      <h3>{dateFormat(trip.date, "mediumDate", true)}</h3>
+      <Link to={'/checklists'}>Checklists</Link>
+      {trip.name &&
       <button 
           type="button"
           className={styles.edit}
-          onClick={handleToggle}
-        >Edit Trip</button>
+          onClick={handleEditTripToggle}
+        >Edit Trip</button>}
       {showEditTripForm && trip.name &&
         <EditTripForm
           trip={trip}
           handleUpdateTrip={handleUpdateTrip}
+        /> 
+      }
+      {trip.name &&
+      <button 
+          type="button"
+          className={styles.edit}
+          onClick={handleBudgetToggle}
+        >
+          {
+            trip.budget?.total || trip.budget?.travel || trip.budget?.food || trip.budget?.lodging || trip.budget?.activities || trip.budget?.misc
+            ? 'Edit Budget' : 'Set a Budget'}
+        </button>}
+      {showBudgetForm && trip.name &&
+        <BudgetForm
+          trip={trip}
+          handleAddBudget={handleAddBudget}
         /> 
       }
       <Activities

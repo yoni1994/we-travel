@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import dateFormat from 'dateformat'
 
 // Styles
 import styles from './EditTripForm.module.css'
@@ -6,7 +7,7 @@ import styles from './EditTripForm.module.css'
 function EditTripForm({trip, handleUpdateTrip}) {
   const [formData, setFormData] = useState({
     name: trip.name,
-    date: trip.date,
+    date: dateFormat(trip.date,"yyyy-mm-dd", true),
     notes: trip.notes,
   })
 

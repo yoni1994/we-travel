@@ -35,7 +35,7 @@ function Checklists(props) {
         <AddChecklistForm
           handleAddChecklist={handleAddChecklist}
         ></AddChecklistForm>
-          <p>Hello World! I'm the Trips component.</p> 
+          <p>Hello World! I'm the Checklist component.</p> 
             {checklists.map(checklist => {
               return (
                 <ChecklistCard

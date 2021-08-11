@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import dateFormat from 'dateformat'
+
 // Styles
 import styles from './EditActivityForm.module.css'
 
@@ -10,7 +12,7 @@ function EditActivityForm({activity, handleUpdateActivity}) {
     address: activity.address,
     notes: activity.notes,
     cost: activity.cost,
-    date: activity.date,
+    date: dateFormat(activity.date, "yyyy-mm-dd", true),
   })
   
   const handleChange = (e) => {
