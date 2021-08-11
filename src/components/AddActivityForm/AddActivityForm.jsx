@@ -44,9 +44,12 @@ function AddActivityForm(props) {
 
 
   return (
-      <div>
+      <div className={styles.container}>
           <h2>Add Activity</h2>
-       <form id="add-activity-form" onSubmit={handleSubmit}>
+       <form 
+         className={styles.form}
+         id="add-activity-form" 
+         onSubmit={handleSubmit}>
           <label htmlFor="activity-name">Name</label>
           <input
             id="activity-name" 
