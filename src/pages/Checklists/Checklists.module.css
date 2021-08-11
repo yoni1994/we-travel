@@ -1,7 +1,8 @@
 html {
   box-sizing: border-box;
 }
-  *,
+  
+*,
 *::before,
 *::after {
   box-sizing: inherit;
@@ -25,16 +26,11 @@ html {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: #2771a8;
   align-items: center;
   color: var(--geyser);
   width: 100%;
   padding: 20px;
   margin-bottom: 20px;
-}
-
-h2 {
-  color: #d7dee6;
 }
 
 form {
@@ -79,7 +75,7 @@ form button {
   border: none;
   color: var(--geyser);
   font-weight: 600;
-  background-color: var(--thatch);
+  background-color: var(--shadow);
   border-radius: 50px;
 }
 
@@ -94,11 +90,11 @@ button {
   border: none;
   color: var(--geyser);
   font-weight: 600;
-  background-color: rgb(138, 43, 8);
+  background-color: (--thatch);
   border-radius: 50px;
 }
 
 button:hover {
-  background-color: orangered;
+  background-color: blue;
   cursor: pointer;
 }

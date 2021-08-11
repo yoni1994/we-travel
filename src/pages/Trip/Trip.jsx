@@ -103,15 +103,16 @@ function Trip(props) {
           handleUpdateTrip={handleUpdateTrip}
         /> 
       }
+      <Checklists
+        className={styles.checklist}
+        checklists={checklists}
+        handleAddChecklist={handleAddChecklist}
+        handleDeleteChecklist={handleDeleteChecklist}
+      />
       <Activities
         activities={activities}
         handleAddActivity={handleAddActivity}
         handleDeleteActivity={handleDeleteActivity}
-      />
-      <Checklists
-        checklists={checklists}
-        handleAddChecklist={handleAddChecklist}
-        handleDeleteChecklist={handleDeleteChecklist}
       />
       {/* <Link to={'/activities'}>Activities</Link>
       <Link to={'/checklist'}>Checklists</Link> */}
