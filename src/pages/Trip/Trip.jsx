@@ -9,16 +9,19 @@ import styles from './Trip.module.css'
 // Services
 import * as tripService from '../../services/tripService'
 import * as activityService from '../../services/activityService'
+import * as checklistService from '../../services/checklistService'
 
 // Components
 import EditTripForm from '../../components/EditTripForm/EditTripForm'
 import Activities from '../Activities/Activities'
+import Checklists from '../Checklists/Checklists'
 
 function Trip(props) {
   const { id } = useParams()
   
   const [trip, setTrip] = useState({})
   const [activities, setActivities] = useState([])
+  const [checklists, setChecklists] = useState([])
   useEffect(() => {
     const fetchTrip = async () => {
         try {
@@ -68,6 +71,19 @@ function Trip(props) {
       ) 
   }
 
+  const handleAddChecklist = async (newChecklistData) => {
+    const newChecklist = await checklistService.create(newChecklistData);
+    await tripService.update({$push: {checklists: newChecklist._id}}, id)
+    setChecklists([newChecklist, ...checklists]);
+  }
+
+  const handleDeleteChecklist = id => {
+    checklistService.deleteOne(id)
+      .then(
+        setChecklists(checklists.filter(checklist => id !== checklist._id))
+      ) 
+  }  
+
   return (
     <div className={styles.container}>
       <h1>{trip.name}</h1>
@@ -91,6 +107,11 @@ function Trip(props) {
         activities={activities}
         handleAddActivity={handleAddActivity}
         handleDeleteActivity={handleDeleteActivity}
+      />
+      <Checklists
+        checklists={checklists}
+        handleAddChecklist={handleAddChecklist}
+        handleDeleteChecklist={handleDeleteChecklist}
       />
       {/* <Link to={'/activities'}>Activities</Link>
       <Link to={'/checklist'}>Checklists</Link> */}
