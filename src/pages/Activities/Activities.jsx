@@ -37,9 +37,16 @@ function Activities(props) {
   
   return (
       <div className={styles.container}>
-        <AddActivityForm
-          handleAddActivity={handleAddActivity}
-        ></AddActivityForm>
+        <button 
+          type="button"
+          className={styles.plan}
+          onClick={handleToggle}
+        >Plan Activity</button>
+        {showAddActivityForm && 
+          <AddActivityForm
+            handleAddActivity={handleAddActivity}
+          ></AddActivityForm>
+        }
         <p>Here are all your activities!</p> 
             {activities.map(activity => {
               return (
