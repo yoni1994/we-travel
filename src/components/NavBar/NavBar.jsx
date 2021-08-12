@@ -11,19 +11,19 @@ const NavBar = ({ user, handleLogout }) => {
 	}
 
 	return (
+		<>
 		<nav>
 			<i 
 			  onClick={handleToggle}
 			  className={`fas fa-bars ${styles.toggle}`}>
 		    </i>
-				<i 
-			  onClick={handleToggle}
+				<NavLink to="/home"><i 
 			  className={`fas fa-plane-departure ${styles.toggle}`}>
-		    </i>
-				<i 
-			  onClick={handleToggle}
+		    </i></NavLink>
+				<NavLink to="/trips"><i 
 			  className={`fas fa-passport ${styles.toggle}`}>
-		    </i>
+		    </i></NavLink>
+				</nav>
 			{openOrClosed &&
 				<div className={styles.navDark}>
 				{user ? (
@@ -43,7 +43,7 @@ const NavBar = ({ user, handleLogout }) => {
 				)}
 				</div>
             }
-		</nav>
+						</>
 	)
 }
 
