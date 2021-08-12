@@ -16,6 +16,14 @@ const NavBar = ({ user, handleLogout }) => {
 			  onClick={handleToggle}
 			  className={`fas fa-bars ${styles.toggle}`}>
 		    </i>
+				<i 
+			  onClick={handleToggle}
+			  className={`fas fa-plane-departure ${styles.toggle}`}>
+		    </i>
+				<i 
+			  onClick={handleToggle}
+			  className={`fas fa-passport ${styles.toggle}`}>
+		    </i>
 			{openOrClosed &&
 				<div className={styles.navDark}>
 				{user ? (
