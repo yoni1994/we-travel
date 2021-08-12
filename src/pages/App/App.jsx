@@ -13,6 +13,7 @@ import Activities from '../Activities/Activities'
 import Activity from '../Activity/Activity'
 import Inspiration from '../Inspiration/Inspiration'
 import Checklists from '../Checklists/Checklists'
+import Checklist from '../Checklist/Checklist'
 
 const App = () => {
 	const history = useHistory()
