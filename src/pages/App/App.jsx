@@ -72,6 +72,9 @@ const App = () => {
 			<Route exact path='/checklists'>
 				{user ? <Checklists user={user} /> : <Redirect to='/login'/>}
 			</Route>
+			<Route exact path='/checklists/:id'>
+				{user ? <Checklist user={user} /> : <Redirect to='/login'/>}
+			</Route>
 		
 		</div>
 	)
