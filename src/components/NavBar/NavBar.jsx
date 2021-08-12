@@ -22,7 +22,7 @@ const NavBar = ({ user, handleLogout }) => {
 		    </i></NavLink>
 				<NavLink to="/trips"><i 
 			  className={`fas fa-passport ${styles.toggle}`}>
-		    </i>
+		    </i></NavLink>
 				</nav>
 			{openOrClosed &&
 				<div className={styles.navDark}>
