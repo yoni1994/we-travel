@@ -23,7 +23,7 @@ function Inspiration(){
         <div className={styles.container}>
             <img src={backgroundImageObj.response?.urls.regular} alt={backgroundImageObj.response?.alt_description} />
             <p>{backgroundImageObj.response?.description}</p>
-            Photo by <a href={`https://unsplash.com/@${backgroundImageObj.response?.user.username}?utm_source=${APP_NAME}&utm_medium=referral`}>{backgroundImageObj.response?.user.name}</a> on <a href={`https://unsplash.com/?utm_source=${APP_NAME}&utm_medium=referral`}>Unsplash</a>
+            Photos by <a href={`https://unsplash.com/@${backgroundImageObj.response?.user.username}?utm_source=${APP_NAME}&utm_medium=referral`}>{backgroundImageObj.response?.user.name}</a> on <a href={`https://unsplash.com/?utm_source=${APP_NAME}&utm_medium=referral`}>Unsplash</a>
 
             <ImageCard/>
         </div>
