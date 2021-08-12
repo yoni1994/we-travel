@@ -14,10 +14,11 @@ const unsplash = createApi({
     fetch: nodeFetch
 })
 
-// unsplash.photos.getRandom({query: 'Italy', count: 1})
-//  .then(json => {
-//      console.log(json)
-// })
+unsplash.photos.getRandom({query: 'Italy'})
+ .then(res => {
+     console.log(res)
+})
+
 
 // if(res.type === 'success'){
 //     const photo = res.photo
