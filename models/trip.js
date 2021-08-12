@@ -23,7 +23,7 @@ const tripSchema = Schema({
   country: {type: mongoose.Schema.Types.ObjectId, ref: "Country"},
   date: {type: Date},
   notes: {type: String},
-  checklist: [{type: mongoose.Schema.Types.ObjectId, ref: "Checklist"}]
+  checklists: [{type: mongoose.Schema.Types.ObjectId, ref: "Checklist"}]
 }, {
   timestamps: true,
 })
