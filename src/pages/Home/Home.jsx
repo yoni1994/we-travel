@@ -8,6 +8,7 @@ import styles from './Home.module.css'
 // components
 import Inspiration from '../Inspiration/Inspiration'
 
+
 function Home(props) {
   return (
       <div className={styles.container}>

@@ -11,8 +11,8 @@ import Trips from '../Trips/Trips'
 import Trip from '../Trip/Trip'
 import Activities from '../Activities/Activities'
 import Activity from '../Activity/Activity'
-import Inspiration from '../Inspiration/Inspiration'
 import Checklists from '../Checklists/Checklists'
+import Country from '../Country/Country'
 import Checklist from '../Checklist/Checklist'
 import './App.css'
 
@@ -68,8 +68,8 @@ const App = () => {
 			<Route exact path='/activities/:id'>
 				{user ? <Activity user={user} /> : <Redirect to='/login'/>}
 			</Route>
-			<Route exact path='/inspiration'>
-				{user ? <Inspiration user={user} /> : <Redirect to='/login'/>}
+			<Route exact path='/inspirations/:id'>
+				{user ? <Country user={user} /> : <Redirect to='/login'/>}
 			</Route>
 			<Route exact path='/checklists'>
 				{user ? <Checklists user={user} /> : <Redirect to='/login'/>}
