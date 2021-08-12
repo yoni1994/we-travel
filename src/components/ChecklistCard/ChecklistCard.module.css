@@ -15,10 +15,11 @@ html {
   color: black;
   margin: 5px;
   padding: 5px;
+  border-radius: 6px;
 }
 
 .container:hover {
-  background-color: lightblue;
+  background-color: (--shadow);
 }
 
 .delete {
