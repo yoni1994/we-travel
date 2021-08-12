@@ -25,7 +25,7 @@ function EditActivityForm({activity, handleUpdateActivity}) {
   }
 
   return (
-      <div>
+      <div className={styles.container}>
         <h2>Edit Activity</h2>
         <form id="edit-activity-form" onSubmit={handleSubmit}>
           <label htmlFor="activity-name">Name</label>
