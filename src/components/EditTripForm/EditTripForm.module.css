@@ -58,6 +58,7 @@ textarea {
     background-color: var(--jelly-bean);
     resize: none;
     border: none;
+    border: 2px solid black;
 }
 
 textarea::placeholder {
