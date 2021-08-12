@@ -51,6 +51,7 @@ function AddChecklistForm(props) {
       onChange={handleChangeName}
       autoComplete="off"
       placeholder="checklist name"
+      required
       />
       <label>Items</label>
       {checklistItems.map((item, i) => (
