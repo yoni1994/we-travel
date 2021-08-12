@@ -121,7 +121,6 @@ function Trip(props) {
         /> 
       }
       <Checklists
-        className={styles.checklist}
         checklists={checklists}
         handleAddChecklist={handleAddChecklist}
         handleDeleteChecklist={handleDeleteChecklist}

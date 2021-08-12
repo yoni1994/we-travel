@@ -21,80 +21,22 @@ html {
   --shakespeare: #3597cd;
 }
 
-
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  color: var(--geyser);
-  width: 100%;
-  padding: 20px;
-  margin-bottom: 20px;
-}
-
-form {
-  font-size: 1.4rem;
-}
-
-form * {
-  margin-bottom: 5px;
-}
-
-input {
+  color: blanchedalmond;
   background-color: var(--jelly-bean);
-  border: none;
-  border-bottom: 1px solid var(--thatch);
-  color: var(--geyser);
-  margin-bottom: 20px;
 }
 
-input::placeholder {
-  color: var(--geyser);
-}
-
-textarea {
-  background-color: var(--jelly-bean);
-  color: var(--geyser);
-  resize: none;
-  border: none;
-}
-
-textarea::placeholder {
-  color: var(--geyser);
-}
-
-input:focus, textarea:focus {
-  outline: 1px solid var(--shakespeare);
-  border: none;
-}
-
-form button {
+button.plan {
+  margin: 20px;
   height: 50px;
-  width: 100%;
-  border: none;
-  color: var(--geyser);
-  font-weight: 600;
-  background-color: var(--shadow);
-  border-radius: 50px;
+  width: 200px;
+  background-color: var(--thatch);
 }
 
-form button:hover {
+button.plan:hover{
   background-color: var(--shakespeare);
-  cursor: pointer;
-}
-
-button {
-  height: 25px;
-  width: 100px;
-  border: none;
-  color: var(--geyser);
-  font-weight: 600;
-  background-color: (--thatch);
-  border-radius: 50px;
-}
-
-button:hover {
-  background-color: blue;
   cursor: pointer;
 }
