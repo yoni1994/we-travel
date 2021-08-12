@@ -97,3 +97,30 @@ button:hover {
   background-color: orangered;
   cursor: pointer;
 }
+
+.addItemDiv {
+  width: 100%;
+}
+
+.addItemDiv input {
+  width: 70%;
+}
+
+.addItem {
+  margin-left: 10px;
+}
+
+.addItem:hover{
+  color: lightgreen;
+  cursor: pointer;
+}
+
+.removeItem{
+  margin-left: 5px;
+  color: orange;
+}
+
+.removeItem:hover{
+  color: orangered;
+  cursor: pointer;
+}
