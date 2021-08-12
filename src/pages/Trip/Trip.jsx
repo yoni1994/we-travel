@@ -151,12 +151,7 @@ function Trip(props) {
         handleAddActivity={handleAddActivity}
         handleDeleteActivity={handleDeleteActivity}
       />
-      {/* <Link to={'/activities'}>Activities</Link>
-      <Link to={'/checklist'}>Checklists</Link> */}
-      
-      
     </div>
-    
   )
 }
 
