@@ -31,6 +31,10 @@ html {
     border: 2px solid #d7dee6;
 }
 
+.container > h2 {
+  text-decoration: none;
+}
+
 .container:hover {
     background-color: #8daeca;
 }

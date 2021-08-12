@@ -14,6 +14,7 @@ import Activity from '../Activity/Activity'
 import Inspiration from '../Inspiration/Inspiration'
 import Checklists from '../Checklists/Checklists'
 import Checklist from '../Checklist/Checklist'
+import './App.css'
 
 const App = () => {
 	const history = useHistory()
