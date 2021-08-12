@@ -1,26 +1,36 @@
 html {
-    box-sizing: border-box;
-  }
-    
-  *,
-  *::before,
-  *::after {
-    box-sizing: inherit;
-  }
+  box-sizing: border-box;
+}
+  
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
 
+:root {
+  --rock: #563e3a;
+  --geyser: #d7dee6;
+  --shark: #1c1f25;
+  --shadow: #886748;
+  --hoki: #607d9d;
+  --mountbatten-pink: #927b87;
+  --polo-blue: #8daeca;
+  --thatch: #b3a08e;
+  --jelly-bean: #2771a8;
+  --shakespeare: #3597cd;
+}
 .container {
     height: 200px;
     width: 300px;
-    background-color: white;
-    color: black;
+    background-color: #3597cd;
+    color: #d7dee6;
     margin: 5px;
     padding: 5px;
+    border-radius: 8px;
+    border: 2px solid #d7dee6;
 }
 
 .container:hover {
-    background-color: lightblue;
-}
-
-a {
-  text-decoration: none;
+    background-color: #8daeca;
 }

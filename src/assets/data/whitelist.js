@@ -1,0 +1,1 @@
+let whitelistedCountries = ['AUS', 'NZL', 'FJI', 'EGY', 'ZAF', 'MDG', 'ETH', 'CHN', 'IND', 'JPN', 'ISR', 'THA', 'KOR', 'PHL', 'IDN', 'BRA', 'PER', 'COL', 'MEX', 'CAN', 'JAM', 'CRI', 'BHS', 'RUS', 'DEU', 'GBR', 'FRA', 'ITA', 'ESP', 'GRC', 'NOR', 'NLD', 'IRL']

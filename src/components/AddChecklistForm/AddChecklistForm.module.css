@@ -94,12 +94,12 @@ button {
   border: none;
   color: var(--geyser);
   font-weight: 600;
-  background-color: (--thatch);
+  background-color: var(--thatch);
   border-radius: 50px;
 }
 
 button:hover {
-  background-color: (--jelly-bean);
+  background-color: var(--jelly-bean);
   cursor: pointer;
 }
 
