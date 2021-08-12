@@ -3,24 +3,34 @@ import React, { useState } from 'react'
 import styles from './AddChecklistForm.module.css'
 
 function AddChecklistForm(props) {
-  const [checklistData, setChecklistData] = useState({
-    // owner: '',
-    name: '',
-    items: [''],
-  })
+  const [checklistName, setChecklistName] = useState({name: ''})
+  const [checklistItems, setChecklistItems] = useState([{name: ''}])
+  
+  const handleChangeName = (e) => {
+    setChecklistName({...checklistName, [e.target.name]: e.target.value})
+  }
+  
+  const handleChangeItems =  (e, i) => {
+    let newItems = [...checklistItems]
+    newItems[i][e.target.name] = e.target.value
+    setChecklistItems(newItems)
+  }
 
-  const handleChange = (e) => {
-    setChecklistData({...checklistData, [e.target.name]: e.target.value})
+  const handleAddItems = (e) => {
+    e.preventDefault()
+    setChecklistItems([...checklistItems, {name: ''}])
+  }
+
+  const handleRemoveItems = (i) => {
+    let newItems = [...checklistItems]
+    newItems.splice(i, 1)
+    setChecklistItems(newItems)
   }
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    props.handleAddChecklist(checklistData)
-    setChecklistData({
-      // owner: '',
-      name: '',
-      items: [''],
-    })
+    props.handleAddChecklist(checklistName)
+    setChecklistName({name: '',})
   }
 
   return (
@@ -32,21 +42,35 @@ function AddChecklistForm(props) {
       id="checklist-name"
       type="text"
       name="name"
-      value={checklistData.name}
-      onChange={handleChange}
+      value={checklistName.name}
+      onChange={handleChangeName}
       autoComplete="off"
       placeholder="checklist name"
       />
-      <label htmlFor="checklist-items">Items</label>
-      <input 
-      id="checklist-items"
-      type="text"
-      name="items"
-      value={checklistData.items}
-      onChange={handleChange}
-      autoComplete="off"
-      placeholder="checklist Items"
-      />
+      <label>Items</label>
+      {checklistItems.map((item, i) => (
+        <div className={styles.addItemDiv} key={i}>
+          <input 
+            id={`checklist-items-${i+1}`}
+            type="text"
+            name="name"
+            value={item.name || ''}
+            onChange={(e) => handleChangeItems(e, i)}
+            autoComplete="off"
+            placeholder="checklist item"
+          />
+          <i 
+            className={`fas fa-plus-circle ${styles.addItem}`}
+            onClick={handleAddItems}
+          ></i>
+          <i 
+            className={`fas fa-minus-circle ${styles.removeItem}`}
+            onClick={() => handleRemoveItems(i)}
+          ></i>
+      </div>
+      ))}
+      
+      
       <button type="submit">Add Checklist</button>
     </form>
     </div>
