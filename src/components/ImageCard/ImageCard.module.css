@@ -20,19 +20,20 @@ html {
     --jelly-bean: #2771a8;
     --shakespeare: #3597cd;
   }
+
   
   .card {
     height: 300px;
     width: 300px;
     border-radius: 20px;
     background-color: var(--geyser);
-    color: var(--shark)
+    color: var(--shark);
+    margin-bottom: 10px;
   }
 
   .imageBanner {
-    background-image: url('/src/assets/images/test/la-so-vk4vjTNVrTg-unsplash.jpg');
     background-size: cover;
-    height: 150px;
+    height: 200px;
     width: 300px;
     border-radius: 20px 20px 0px 0px;
   }

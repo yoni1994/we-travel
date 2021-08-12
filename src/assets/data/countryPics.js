@@ -297,3 +297,5 @@ let countryPics = [
         }
     },
 ]
+
+export default countryPics
