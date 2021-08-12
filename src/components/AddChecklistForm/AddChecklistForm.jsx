@@ -29,8 +29,13 @@ function AddChecklistForm(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    props.handleAddChecklist(checklistName)
+    const formData = {
+      name: checklistName.name,
+      items: checklistItems
+    }
+    props.handleAddChecklist(formData)
     setChecklistName({name: '',})
+    setChecklistItems([{name: ''}])
   }
 
   return (
