@@ -17,10 +17,10 @@ const NavBar = ({ user, handleLogout }) => {
 			  onClick={handleToggle}
 			  className={`fas fa-bars ${styles.toggle}`}>
 		    </i>
-				<i 
+				<NavLink to="/home"><i 
 			  className={`fas fa-plane-departure ${styles.toggle}`}>
-		    </i>
-				<i 
+		    </i></NavLink>
+				<NavLink to="/trips"><i 
 			  className={`fas fa-passport ${styles.toggle}`}>
 		    </i>
 				</nav>
