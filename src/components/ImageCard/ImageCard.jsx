@@ -11,23 +11,23 @@ import countryPics from '../../assets/data/countryPics';
 
 function ImageCard(){
     return (
-        <Link to={`/inspirations/${countryPics.alpha3code}`}>
-            <div className={styles.container}>
+        <div className={styles.container}>
                 {countryPics.map((countryPic, i) => (
-                    <div className={styles.card}>
-                            <div className={styles.imageBanner}>
-                                <img src={countryPic.pics.structures} alt="" className={styles.imageBanner}/>
-                            </div>
-                            <div className={styles.cardHeader}>
-                                <h3>{countryPic.country}</h3>
-                            </div>
-                            <div className={styles.cardBody}>
-                                <button>Travel Here</button>
-                            </div>
-                    </div>
+                    <Link to={`/inspirations/${countryPic.alpha3Code}`}>
+                        <div className={styles.card}>
+                                <div className={styles.imageBanner}>
+                                    <img src={countryPic.pics.structures} alt="" className={styles.imageBanner}/>
+                                </div>
+                                <div className={styles.cardHeader}>
+                                    <h3>{countryPic.country}</h3>
+                                </div>
+                                <div className={styles.cardBody}>
+                                    <button>Travel Here</button>
+                                </div>
+                        </div>
+                    </Link>
                 ))}
             </div>
-        </Link>
     )
 }
 
