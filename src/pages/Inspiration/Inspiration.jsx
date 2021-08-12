@@ -10,20 +10,20 @@ import ImageCard from '../../components/ImageCard/ImageCard';
 import * as inspirationService from '../../services/inspirationService'
 
 function Inspiration(){
-    const [backgroundImage, setBackgroundImage] = useState('')
+    const [backgroundImageObj, setBackgroundImageObj] = useState('')
 
     useEffect(() => {
        inspirationService.index()
-        .then(unsplashImage => setBackgroundImage(unsplashImage))
+        .then(unsplashImageObj => setBackgroundImageObj(unsplashImageObj))
     }, []);
 
-    console.log("backgroundImage", backgroundImage);
+    console.log("backgroundImage", backgroundImageObj);
 
     return (
         <div className={styles.container}>
-
+            <img src={backgroundImageObj.response?.urls.regular} alt={backgroundImageObj.response?.alt_description} />
+            <p>{backgroundImageObj.response?.description}</p>
             <ImageCard/>
-
         </div>
     )
 }
