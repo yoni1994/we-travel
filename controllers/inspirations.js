@@ -1,3 +1,4 @@
+import { json } from 'express'
 import nodeFetch from 'node-fetch'
 import { createApi } from 'unsplash-js'
 // import { toJSON } from 'flatted';
@@ -16,6 +17,7 @@ const unsplash = createApi({
 function index(req, res){
     unsplash.photos.getRandom({query: 'Italy'})
     .then(response => {
+        console.log(response)
         return res.status(200).json(response)
     })
     .catch(error => {
