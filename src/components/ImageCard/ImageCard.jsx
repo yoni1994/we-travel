@@ -5,14 +5,9 @@ import { Link } from 'react-router-dom'
 import styles from './ImageCard.module.css'
 
 
-import countryPics from '../../assets/data/countryPics';
-
-
-
-function ImageCard(){
+function ImageCard({countryPic}){
     return (
         <div className={styles.container}>
-                {countryPics.map((countryPic, i) => (
                     <Link to={`/inspirations/${countryPic.alpha3Code}`}>
                         <div className={styles.card}>
                                 <div className={styles.imageBanner}>
@@ -26,7 +21,6 @@ function ImageCard(){
                                 </div>
                         </div>
                     </Link>
-                ))}
             </div>
     )
 }

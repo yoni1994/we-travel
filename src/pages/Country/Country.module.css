@@ -54,3 +54,9 @@ button.edit:hover{
     background-color: var(--shakespeare);
     cursor: pointer;
 }
+
+.countryPics {
+    height: 200px;
+    width: 300px;
+    background-size: cover;
+}

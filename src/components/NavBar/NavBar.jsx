@@ -31,7 +31,6 @@ const NavBar = ({ user, handleLogout }) => {
 					<NavLink to="/users">Users</NavLink>
 					<NavLink to="/home">Home</NavLink>
 					<NavLink to="/trips">Trips</NavLink>
-					<NavLink to="/inspiration">Inspiration</NavLink>
 					<NavLink to='' onClick={handleLogout}>Log out</NavLink>
 					</>
 				) : (
