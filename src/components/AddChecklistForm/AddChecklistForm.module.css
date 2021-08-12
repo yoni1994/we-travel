@@ -1,7 +1,8 @@
 html {
   box-sizing: border-box;
 }
-  *,
+  
+*,
 *::before,
 *::after {
   box-sizing: inherit;
@@ -25,20 +26,15 @@ html {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: #2771a8;
   align-items: center;
   color: var(--geyser);
   width: 100%;
+  padding: 20px;
   margin-bottom: 20px;
-}
-
-h2 {
-  color: #d7dee6;
 }
 
 form {
   font-size: 1.4rem;
-  width: 100%;
 }
 
 form * {
@@ -54,22 +50,21 @@ input {
 }
 
 input::placeholder {
-  color: #b3afaf;
+  color: var(--geyser);
 }
 
 textarea {
   background-color: var(--jelly-bean);
-  color: var(--geyser);
   resize: none;
   border: none;
 }
 
 textarea::placeholder {
-  color: #b3afaf;
+  color: var(--geyser);
 }
 
 input:focus, textarea:focus {
-  outline: 1px solid var(--shakespeare);
+  outline: 1px solid var(--thatch);
   border: none;
 }
 
@@ -94,12 +89,12 @@ button {
   border: none;
   color: var(--geyser);
   font-weight: 600;
-  background-color: var(--thatch);
+  background-color: rgb(138, 43, 8);
   border-radius: 50px;
 }
 
 button:hover {
-  background-color: var(--jelly-bean);
+  background-color: orangered;
   cursor: pointer;
 }
 
