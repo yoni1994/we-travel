@@ -29,7 +29,6 @@ html {
   align-items: center;
   color: var(--geyser);
   width: 100%;
-  padding: 20px;
   margin-bottom: 20px;
 }
 
@@ -39,6 +38,7 @@ h2 {
 
 form {
   font-size: 1.4rem;
+  width: 100%;
 }
 
 form * {
@@ -54,7 +54,7 @@ input {
 }
 
 input::placeholder {
-  color: var(--geyser);
+  color: #b3afaf;
 }
 
 textarea {
@@ -65,7 +65,7 @@ textarea {
 }
 
 textarea::placeholder {
-  color: var(--geyser);
+  color: #b3afaf;
 }
 
 input:focus, textarea:focus {
@@ -100,5 +100,32 @@ button {
 
 button:hover {
   background-color: var(--jelly-bean);
+  cursor: pointer;
+}
+
+.addItemDiv {
+  width: 100%;
+}
+
+.addItemDiv input {
+  width: 70%;
+}
+
+.addItem {
+  margin-left: 10px;
+}
+
+.addItem:hover{
+  color: lightgreen;
+  cursor: pointer;
+}
+
+.removeItem{
+  margin-left: 5px;
+  color: orange;
+}
+
+.removeItem:hover{
+  color: orangered;
   cursor: pointer;
 }

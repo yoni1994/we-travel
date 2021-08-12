@@ -13,6 +13,7 @@ import Activities from '../Activities/Activities'
 import Activity from '../Activity/Activity'
 import Inspiration from '../Inspiration/Inspiration'
 import Checklists from '../Checklists/Checklists'
+import Checklist from '../Checklist/Checklist'
 
 const App = () => {
 	const history = useHistory()
@@ -71,6 +72,9 @@ const App = () => {
 			</Route>
 			<Route exact path='/checklists'>
 				{user ? <Checklists user={user} /> : <Redirect to='/login'/>}
+			</Route>
+			<Route exact path='/checklists/:id'>
+				{user ? <Checklist user={user} /> : <Redirect to='/login'/>}
 			</Route>
 		
 		</div>

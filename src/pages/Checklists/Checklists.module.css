@@ -27,6 +27,7 @@ html {
   align-items: center;
   color: blanchedalmond;
   background-color: var(--jelly-bean);
+  width: 100%;
 }
 
 button.plan {
