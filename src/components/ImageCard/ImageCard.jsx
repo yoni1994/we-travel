@@ -2,7 +2,6 @@ import React from 'react';
 
 import styles from './ImageCard.module.css'
 
-import testImage from '../../assets/images/test/la-so-vk4vjTNVrTg-unsplash.jpg'
 
 import countryPics from '../../assets/data/countryPics';
 
