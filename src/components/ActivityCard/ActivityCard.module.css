@@ -28,6 +28,7 @@ html {
     margin: 5px;
     padding: 5px;
     border-radius: 8px;
+    border: 2px solid #d7dee6;
 }
 
 .container:hover {
