@@ -1,11 +1,14 @@
 import mongoose from 'mongoose'
 const Schema = mongoose.Schema
 
+const itemSchema = new Schema({
+  name: String
+})
 
-const checklistSchema = new mongoose.Schema({
+const checklistSchema = new Schema({
     owner: {type: Schema.Types.ObjectId, ref: "Profile"},
     name: {type: String},
-    items: {type: [String]},
+    items: [itemSchema],
 }, {
     timestamps: true
 })

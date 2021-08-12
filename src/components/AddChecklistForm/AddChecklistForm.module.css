@@ -1,7 +1,8 @@
 html {
   box-sizing: border-box;
 }
-  *,
+  
+*,
 *::before,
 *::after {
   box-sizing: inherit;
@@ -25,16 +26,11 @@ html {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: #2771a8;
   align-items: center;
   color: var(--geyser);
   width: 100%;
   padding: 20px;
   margin-bottom: 20px;
-}
-
-h2 {
-  color: #d7dee6;
 }
 
 form {
@@ -59,7 +55,6 @@ input::placeholder {
 
 textarea {
   background-color: var(--jelly-bean);
-  color: var(--geyser);
   resize: none;
   border: none;
 }
@@ -69,7 +64,7 @@ textarea::placeholder {
 }
 
 input:focus, textarea:focus {
-  outline: 1px solid var(--shakespeare);
+  outline: 1px solid var(--thatch);
   border: none;
 }
 
@@ -94,11 +89,38 @@ button {
   border: none;
   color: var(--geyser);
   font-weight: 600;
-  background-color: var(--thatch);
+  background-color: rgb(138, 43, 8);
   border-radius: 50px;
 }
 
 button:hover {
-  background-color: var(--jelly-bean);
+  background-color: orangered;
+  cursor: pointer;
+}
+
+.addItemDiv {
+  width: 100%;
+}
+
+.addItemDiv input {
+  width: 70%;
+}
+
+.addItem {
+  margin-left: 10px;
+}
+
+.addItem:hover{
+  color: lightgreen;
+  cursor: pointer;
+}
+
+.removeItem{
+  margin-left: 5px;
+  color: orange;
+}
+
+.removeItem:hover{
+  color: orangered;
   cursor: pointer;
 }

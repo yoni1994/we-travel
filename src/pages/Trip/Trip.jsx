@@ -29,6 +29,7 @@ function Trip(props) {
             const trip = await tripService.getTripById(id)
             setTrip(trip)
             setActivities(trip.activities)
+            setChecklists(trip.checklists)
         } catch (error) {
             throw error
         }
@@ -90,9 +91,13 @@ function Trip(props) {
   }
 
   const handleAddChecklist = async (newChecklistData) => {
-    const newChecklist = await checklistService.create(newChecklistData);
-    await tripService.update({$push: {checklists: newChecklist._id}}, id)
-    setChecklists([newChecklist, ...checklists]);
+    try {
+      const newChecklist = await checklistService.create(newChecklistData);
+      await tripService.update({$push: {checklists: newChecklist._id}}, id)
+      setChecklists([newChecklist, ...checklists]);
+    } catch (error) {
+       throw error
+    }
   }
 
   const handleDeleteChecklist = id => {
@@ -146,12 +151,7 @@ function Trip(props) {
         handleAddActivity={handleAddActivity}
         handleDeleteActivity={handleDeleteActivity}
       />
-      {/* <Link to={'/activities'}>Activities</Link>
-      <Link to={'/checklist'}>Checklists</Link> */}
-      
-      
     </div>
-    
   )
 }
 

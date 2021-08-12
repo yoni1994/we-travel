@@ -54,9 +54,10 @@ input::placeholder {
 }
 
 textarea {
-    background-color: var(--jelly-bean);
+    background-color: var(--geyser);
     resize: none;
     border: none;
+    
 }
 
 textarea::placeholder {
