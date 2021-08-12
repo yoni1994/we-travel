@@ -9,7 +9,13 @@ function ChecklistCard(props) {
       <Link to={`/checklists/${props.checklist._id}`}>
           <div className={styles.container}>
               <h2>{props.checklist.name}</h2>
-              <p>{props.checklist.items}</p>
+              {props.checklist.items.map((item, i) => (
+                  i < 3 ? 
+                  <p key={item._id}>
+                      {item.name}
+                  </p> : null
+              ))}
+              
           </div>
       </Link>
       <button
