@@ -108,7 +108,6 @@ function Trip(props) {
       <h2>{trip.notes}</h2>
       <h3>{dateFormat(trip.date, "mediumDate", true)}</h3>
       {/* <button type="button">Edit Trip</button> */}
-      <Link to={'/checklists'}>Checklists</Link>
       {trip.name &&
       <button 
           type="button"
