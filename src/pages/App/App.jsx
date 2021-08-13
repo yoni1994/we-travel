@@ -49,9 +49,6 @@ const App = () => {
 					<Login handleSignupOrLogin={handleSignupOrLogin}/>
 				}
 			</Route>
-			<Route exact path='/users'>
-				{user ? <Users /> : <Redirect to='/login' />}
-			</Route>
 			<Route exact path='/home'>
 				{user ? <Home /> : <Redirect to='/login'/>}
 			</Route>
