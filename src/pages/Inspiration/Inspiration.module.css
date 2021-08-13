@@ -30,3 +30,7 @@ html {
     background-color: var(--jelly-bean);
     padding: 25px;
   }
+  
+  .unsplashImage {
+    max-width: 100vw;
+  }
