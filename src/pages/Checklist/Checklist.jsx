@@ -29,11 +29,6 @@ function Checklist(){
     return (
         <div className={styles.container}>
             <h1>{checklist.name} Checklist</h1>
-            {/* {checklist?.items.map(item => (
-                <ul>
-                    <li>{item.name}</li>
-                </ul>
-            ))} */}
         </div>
     )
 }
