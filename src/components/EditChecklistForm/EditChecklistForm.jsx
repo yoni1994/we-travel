@@ -5,7 +5,6 @@ import styles from './EditChecklistForm.module.css'
 function EditChecklistForm(props) {
   const [checklistName, setChecklistName] = useState({name: props.checklist.name})
   const [checklistItems, setChecklistItems] = useState(props.checklist.items)
-  
   const handleChangeName = (e) => {
     setChecklistName({...checklistName, [e.target.name]: e.target.value})
   }
@@ -40,7 +39,6 @@ function EditChecklistForm(props) {
 
   return (
     <div className={styles.container}>
-      <h2>Edit Your Checklist</h2>
     <form id="Edit-checklist-form" onSubmit={handleSubmit}>
       <label htmlFor="checklist-name">Name</label>
       <input 
@@ -54,7 +52,7 @@ function EditChecklistForm(props) {
       required
       />
       <label>Items</label>
-      {checklistItems.map((item, i) => (
+      {checklistItems?.map((item, i) => (
         <div className={styles.EditItemDiv} key={i}>
           <input 
             id={`checklist-items-${i+1}`}
@@ -77,8 +75,6 @@ function EditChecklistForm(props) {
           </button>
       </div>
       ))}
-      
-      
       <button type="submit">Edit Checklist</button>
     </form>
     </div>
