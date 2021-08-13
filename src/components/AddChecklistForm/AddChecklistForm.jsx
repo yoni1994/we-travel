@@ -65,14 +65,16 @@ function AddChecklistForm(props) {
             autoComplete="off"
             placeholder="checklist item"
           />
-          <i 
-            className={`fas fa-plus-circle ${styles.addItem}`}
-            onClick={handleAddItems}
-          ></i>
-          <i 
-            className={`fas fa-minus-circle ${styles.removeItem}`}
+          <button onClick={handleAddItems} className={styles.addItem}>
+            +
+          </button>
+
+          <button 
             onClick={() => handleRemoveItems(i)}
-          ></i>
+            className={styles.removeItem}
+            >
+             — 
+          </button>
       </div>
       ))}
       

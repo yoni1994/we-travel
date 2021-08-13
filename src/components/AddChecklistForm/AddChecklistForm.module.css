@@ -103,21 +103,35 @@ button:hover {
 }
 
 .addItemDiv input {
-  width: 70%;
+  width: 50%;
 }
 
 .addItem {
-  margin-left: 10px;
+  display: inline;
+  height: 30px;
+  width: 30px;
+  border-radius: 100px;
+  font-size: 1.2rem;
+  margin-left: 5px;
+  background-color: var(--shakespeare);
+  color: white;
 }
 
 .addItem:hover{
-  color: lightgreen;
+  color: var(--shakespeare);
+  background-color: lightgreen;
   cursor: pointer;
 }
 
-.removeItem{
+.removeItem {
+  display: inline;
+  height: 30px;
+  width: 30px;
+  border-radius: 100px;
+  font-size: 1rem;
   margin-left: 5px;
-  color: orange;
+  background-color: orange;
+  color: var(--jelly-bean);
 }
 
 .removeItem:hover{
