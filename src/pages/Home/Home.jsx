@@ -1,15 +1,25 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 // styles
 import styles from './Home.module.css'
 
-// services
+// Services
+import * as tripService from '../../services/tripService'
 
 // components
 import Inspiration from '../Inspiration/Inspiration'
 
 
 function Home(props) {
+  const [trips, setTrips] = useState([])
+  console.log(trips)
+  
+  useEffect(() => {
+    tripService.getAll()
+      .then(allTrips => setTrips(allTrips))
+  }, []);
+
+
   return (
       <div className={styles.container}>
           <h2>Current Trips</h2>
