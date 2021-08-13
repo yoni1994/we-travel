@@ -28,7 +28,6 @@ const NavBar = ({ user, handleLogout }) => {
 				<div className={styles.navDark}>
 				{user ? (
 					<>
-					<NavLink to="/users">Users</NavLink>
 					<NavLink to="/home">Home</NavLink>
 					<NavLink to="/trips">Trips</NavLink>
 					<NavLink to='' onClick={handleLogout}>Log out</NavLink>

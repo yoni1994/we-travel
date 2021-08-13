@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
 
-import styles from './AddChecklistForm.module.css'
+import styles from './EditChecklistForm.module.css'
 
-function AddChecklistForm(props) {
-  const [checklistName, setChecklistName] = useState({name: ''})
-  const [checklistItems, setChecklistItems] = useState([{name: ''}])
-  
+function EditChecklistForm(props) {
+  const [checklistName, setChecklistName] = useState({name: props.checklist.name})
+  const [checklistItems, setChecklistItems] = useState(props.checklist.items)
   const handleChangeName = (e) => {
     setChecklistName({...checklistName, [e.target.name]: e.target.value})
   }
@@ -16,7 +15,7 @@ function AddChecklistForm(props) {
     setChecklistItems(newItems)
   }
 
-  const handleAddItems = (e) => {
+  const handleEditItems = (e) => {
     e.preventDefault()
     setChecklistItems([...checklistItems, {name: ''}])
   }
@@ -33,15 +32,12 @@ function AddChecklistForm(props) {
       name: checklistName.name,
       items: checklistItems
     }
-    props.handleAddChecklist(formData)
-    setChecklistName({name: '',})
-    setChecklistItems([{name: ''}])
+    props.handleEditChecklist(formData)
   }
 
   return (
     <div className={styles.container}>
-      <h2>Add a Checklist</h2>
-    <form id="add-checklist-form" onSubmit={handleSubmit}>
+    <form id="Edit-checklist-form" onSubmit={handleSubmit}>
       <label htmlFor="checklist-name">Name</label>
       <input 
       id="checklist-name"
@@ -54,8 +50,8 @@ function AddChecklistForm(props) {
       required
       />
       <label>Items</label>
-      {checklistItems.map((item, i) => (
-        <div className={styles.addItemDiv} key={i}>
+      {checklistItems?.map((item, i) => (
+        <div className={styles.EditItemDiv} key={i}>
           <input 
             id={`checklist-items-${i+1}`}
             type="text"
@@ -65,7 +61,7 @@ function AddChecklistForm(props) {
             autoComplete="off"
             placeholder="checklist item"
           />
-          <button onClick={handleAddItems} className={styles.addItem}>
+          <button onClick={handleEditItems} className={styles.addItem}>
             +
           </button>
 
@@ -77,12 +73,10 @@ function AddChecklistForm(props) {
           </button>
       </div>
       ))}
-      
-      
-      <button type="submit">Add Checklist</button>
+      <button type="submit">Edit Checklist</button>
     </form>
     </div>
   )
 }
 
-export default AddChecklistForm
+export default EditChecklistForm

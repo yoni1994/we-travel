@@ -7,7 +7,7 @@ const itemSchema = new Schema({
 
 const checklistSchema = new Schema({
     owner: {type: Schema.Types.ObjectId, ref: "Profile"},
-    name: {type: String},
+    name: {type: String, required: true},
     items: [itemSchema],
 }, {
     timestamps: true

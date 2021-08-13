@@ -20,6 +20,11 @@ Did you know U.S. travelers visit over 140 sites on average when planning a trip
 
 ## Screenshots
 
+![Checklist iPhone](src/assets/images/README/products_screenshots/checklist-iphone.png)
+![Trip iPhone](src/assets/images/README/products_screenshots/trip-iphone.png)
+![Home iPad](src/assets/images/README/products_screenshots/home-ipad.png)
+![Trips iPad](src/assets/images/README/products_screenshots/trips-ipad.png)
+
 ## Technologies Used
 
 - [React](https://reactjs.org/)

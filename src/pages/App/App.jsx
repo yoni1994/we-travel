@@ -14,6 +14,7 @@ import Activity from '../Activity/Activity'
 import Checklists from '../Checklists/Checklists'
 import Country from '../Country/Country'
 import Checklist from '../Checklist/Checklist'
+import './App.css'
 
 const App = () => {
 	const history = useHistory()
@@ -47,9 +48,6 @@ const App = () => {
 					<Redirect to='/' /> : 
 					<Login handleSignupOrLogin={handleSignupOrLogin}/>
 				}
-			</Route>
-			<Route exact path='/users'>
-				{user ? <Users /> : <Redirect to='/login' />}
 			</Route>
 			<Route exact path='/home'>
 				{user ? <Home /> : <Redirect to='/login'/>}
