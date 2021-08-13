@@ -33,8 +33,6 @@ function EditChecklistForm(props) {
       items: checklistItems
     }
     props.handleEditChecklist(formData)
-    setChecklistName({name: '',})
-    setChecklistItems([{name: ''}])
   }
 
   return (
