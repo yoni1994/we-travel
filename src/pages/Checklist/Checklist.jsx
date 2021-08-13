@@ -7,6 +7,9 @@ import styles from './Checklist.module.css'
 // Services
 import * as checklistService from '../../services/checklistService'
 
+// Components
+import EditChecklistForm from '../../components/EditChecklistForm/EditChecklistForm';
+
 function Checklist(){
     const { id } = useParams()
     const [checklist, setChecklist] = useState({})
@@ -21,20 +24,27 @@ function Checklist(){
             }
         }
         fetchChecklist()
-        console.log(checklist)
         return () => { setChecklist(null) }
-      }, [id])
-
+    }, [id])
+    
+    const handleEditChecklist = async (newChecklistData) => {
+        try {
+            const newChecklist = await checklistService.update(newChecklistData, id);
+            setChecklist(newChecklist);
+        } catch (error) {
+            throw error
+        }
+    }
 
     return (
         <div className={styles.container}>
-            {console.log(checklist)}
             <h1>{checklist.name} Checklist</h1>
-            {checklist.items?.map(item => (
-                <ul>
-                    <li>{item.name}</li>
-                </ul>
-            ))}
+            {checklist.name &&
+                <EditChecklistForm
+                checklist={checklist}
+                handleEditChecklist={handleEditChecklist}
+              />
+            }
         </div>
     )
 }
